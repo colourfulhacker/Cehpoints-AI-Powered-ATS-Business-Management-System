@@ -4,6 +4,70 @@
 
 This is a Next.js-based web application for an AI-Powered Applicant Tracking System (ATS) combined with a Business Management System. The platform is designed to streamline recruitment processes, manage client projects, and handle business operations from a single integrated interface. The application serves three primary user types: HR personnel (for recruitment and candidate management), employees (for project execution), and clients (for requirement submission and progress monitoring).
 
+## Recent Changes (November 12, 2025)
+
+### Landing Page Enhancements
+
+**1. Animated Hero Headline**
+- Implemented rotating text animation in hero section
+- Cycles through 8 different features: Intern Hiring, Marketing Hiring, Project Management, Quotation Management, Client Management, Task Management, Real-time Reporting, and Developer Management
+- Smooth fade transitions with gradient styling
+- Component: `AnimatedText.tsx`
+
+**2. Updated Urgency Messaging**
+- Replaced "Only 47 Spots Left" with more compelling "FOUNDER LAUNCH BONUS: Save ₹35,000 This Month • 24h Setup Guarantee!"
+- Enhanced styling with gradient backgrounds and shadow effects
+- Better conveys value proposition and urgency
+
+**3. Comprehensive Business Assessment**
+- Single, detailed assessment form replacing previous two-modal system
+- 3-step flow: Persuasive intro → Comprehensive form → Personalized thank-you
+- LocalStorage tracking: Appears once per visit, can be reopened via floating button
+- 5 comprehensive sections collecting 40+ data points:
+  - Business Information (company details, contact preferences)
+  - Hiring & Recruitment Needs (volume, roles, locations, time spent, current tools)
+  - Project & Client Management (active projects/clients, tools, quotations, reporting)
+  - Feature Priorities (which 8-in-1 features needed, integrations, data migration, success metrics)
+  - Current Challenges & Goals (pain points, budget, urgency, decision authority, custom requirements)
+- Advanced UX features:
+  - Progress indicator showing current section, percentage complete, time remaining
+  - Validation with automatic scroll-to-error for all fields (including multi-select)
+  - Confirmation prompt when skipping after starting to fill form
+  - Section-based focus tracking
+- Persuasive intro elements:
+  - Social proof ("Join 500+ businesses")
+  - Real customer testimonial with specific metrics
+  - Human-in-the-loop approach emphasized
+  - Trust indicators (GDPR/SOC 2 compliance)
+- Personalized thank-you screen using customer data
+- Data structure prepared for backend/CRM integration
+- Component: `ComprehensiveAssessment.tsx`
+
+**4. Transparency & Ownership Section**
+- Comprehensive 6-card section highlighting business commitments:
+  - Source code access for customization
+  - Domain connection services
+  - Free domain for users without one
+  - Free website development for eligible startups (T&C apply)
+  - GST invoice provision
+  - 72-hour custom delivery option
+- Builds trust and differentiates from competitors
+
+**5. Enhanced ROI Calculator**
+- Replaced basic calculator with comprehensive productivity-focused tool
+- Industry selector (6 industries: IT Services, Agencies, Staffing, Consulting, Manufacturing, Retail)
+- Time-tracking inputs:
+  - HR screening hours per month
+  - Interview hours per month
+  - Senior developer technical round hours per month
+- Displays:
+  - Time reclaimed for productive work
+  - What HR and developers can do instead (specific examples)
+  - Multi-metric breakdown (software costs, time costs, total savings)
+  - 5-year projections including hours reclaimed
+  - 72-hour customization availability banner
+- Component: `EnhancedROICalculator.tsx`
+
 ## User Preferences
 
 Preferred communication style: Simple, everyday language.
@@ -24,6 +88,11 @@ Preferred communication style: Simple, everyday language.
 
 **Component Structure**:
 - Modal-based quiz/assessment system (`QuizModal.tsx`) for candidate evaluation and lead qualification
+- Animated text component (`AnimatedText.tsx`) for dynamic hero headlines with gradient styling
+- Business assessment modal (`BusinessAssessment.tsx`) for lead qualification with 5-question interactive flow
+- Enhanced ROI calculator (`EnhancedROICalculator.tsx`) with multi-industry support and productivity metrics
+- Legacy ROI calculator (`ROICalculator.tsx`) - retained for reference, replaced in production by enhanced version
+- Countdown timer component (`CountdownTimer.tsx`) for urgency messaging
 - Reusable components architecture for scalability
 - Feature-based organization for better code maintainability
 

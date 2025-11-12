@@ -3,10 +3,9 @@ import { useState } from 'react';
 import dynamic from 'next/dynamic';
 import AnimatedText from '../components/AnimatedText';
 
-const QuizModal = dynamic(() => import('../components/QuizModal'), { ssr: false });
 const CountdownTimer = dynamic(() => import('../components/CountdownTimer'), { ssr: false });
 const EnhancedROICalculator = dynamic(() => import('../components/EnhancedROICalculator'), { ssr: false });
-const BusinessAssessment = dynamic(() => import('../components/BusinessAssessment'), { ssr: false });
+const ComprehensiveAssessment = dynamic(() => import('../components/ComprehensiveAssessment'), { ssr: false });
 
 export default function Home() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -90,27 +89,35 @@ export default function Home() {
   const faqs = [
     {
       question: "What happens after I make the payment?",
-      answer: "Within 24 hours, our team will set up your complete system, provide training, and ensure you're ready to start using all features. You'll get dedicated onboarding support."
+      answer: "Typically within 24-48 hours, our team will set up your system, provide personalized training, and ensure you're ready to start. Setup time may vary based on your specific customization needs. You'll get dedicated onboarding support throughout the process."
+    },
+    {
+      question: "Will this system replace my HR team or employees?",
+      answer: "No, absolutely not! This is a human-in-the-loop system designed to make your team MORE efficient, not replace them. HR still makes all hiring decisions, sends offer letters, and maintains final authority. The system simply saves time on repetitive tasks like resume screening and initial assessments, so your HR can focus on strategic activities like employee engagement, culture building, and retention programs."
+    },
+    {
+      question: "How does the cheating detection actually work? Can candidates bypass it?",
+      answer: "Let's be honest: no system is 100% foolproof. Even if you're sitting with a candidate on Google Meet, they could potentially give scripted answers. Our system uses multiple layers: copy-paste blocking, AI-powered answer pattern detection, and response format analysis. If someone tries to paste answers, our AI detects non-human text formatting and patterns. While determined tech-savvy candidates might attempt to bypass security, our AI can flag suspicious patterns. Most importantly, this system saves your HR's time – they don't need to ask basic screening questions, especially for roles they're less familiar with."
     },
     {
       question: "Is the ₹15,000 really a one-time payment?",
       answer: "Yes! Pay once and own it forever. No monthly fees, no hidden costs, no recurring charges. You get lifetime access, free hosting, and all future updates included."
     },
     {
-      question: "Can I really save money compared to other solutions?",
-      answer: "Absolutely! Most HR and project management tools charge ₹5,000-20,000 per month. That's ₹60,000-2,40,000 per year! Our one-time ₹15,000 pays for itself in just 1-3 months."
+      question: "How much time will this actually save our team?",
+      answer: "Based on our clients' experience: HR teams save 15-20 hours per month on resume screening and initial candidate filtering. Senior developers save 8-12 hours monthly by reducing their involvement in basic technical rounds. Interview panels save time by only meeting pre-screened, qualified candidates. This frees your team to focus on what matters: building products, closing deals, strategic planning, and growing your business."
     },
     {
-      question: "What if I need help or have technical issues?",
-      answer: "You get priority support via phone, WhatsApp, and email. Our expert team responds within hours to ensure your business never stops running."
-    },
-    {
-      question: "How secure is my data?",
-      answer: "We use bank-level SSL encryption, GDPR-compliant data handling, and secure cloud hosting. Your candidate and client data is completely safe and private."
+      question: "Does HR still make the final hiring decisions?",
+      answer: "100% YES! We don't hire people – your HR team does. Our system only assists with initial screening and assessment to save time. The platform provides detailed reports and AI-powered insights, but your HR has complete authority over who gets shortlisted, interviewed, and ultimately hired. You're always in control of your hiring process."
     },
     {
       question: "Can the system grow with my business?",
-      answer: "Yes! Whether you're hiring 5 or 500 people, managing 2 or 200 projects, our system scales seamlessly. Unlimited users, unlimited projects, unlimited growth."
+      answer: "Yes! Whether you're hiring 5 or 50 people monthly, managing 2 or 200 projects, the system adapts to your needs. We offer customization within 72 hours for industry-specific requirements as your business evolves."
+    },
+    {
+      question: "What if I need help or have technical issues?",
+      answer: "You get priority support via phone, WhatsApp, and email. Our expert team typically responds within 2-4 hours during business hours (Mon-Sat, 9 AM - 7 PM IST) to ensure your business keeps running smoothly."
     }
   ];
 
@@ -140,8 +147,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <QuizModal />
-      <BusinessAssessment />
+      <ComprehensiveAssessment />
 
       <div className="min-h-screen bg-white">
         <nav className="fixed top-0 w-full bg-white/95 backdrop-blur-sm shadow-sm z-40">
@@ -221,7 +227,7 @@ export default function Home() {
               
               <div className="inline-block bg-gradient-to-r from-yellow-100 to-orange-100 border-2 border-yellow-400 px-4 md:px-6 py-3 rounded-full mb-4 shadow-lg hover:shadow-xl transition-all">
                 <span className="text-accent font-bold text-xs md:text-sm">
-                  🚀 FOUNDER LAUNCH BONUS: Save ₹35,000 This Month • 24h Setup Guarantee!
+                  🚀 FOUNDER LAUNCH BONUS: Save ₹35,000 This Month • Typically Ready in 24-48h!
                 </span>
               </div>
               
@@ -231,11 +237,11 @@ export default function Home() {
               </p>
 
               <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center mb-8">
-                <a href="#contact" className="group bg-secondary text-white px-6 sm:px-8 py-3.5 sm:py-4 rounded-xl font-semibold text-base sm:text-lg hover:bg-green-700 active:bg-green-800 transition-all shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 active:scale-95 flex items-center justify-center gap-2 touch-manipulation">
-                  Start Free Trial
-                  <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                <a href="https://wa.me/919091156095?text=Hi!%20I%27m%20interested%20in%20starting%20a%20free%20trial%20of%20Cehpoint%20ATS%20system.%20Please%20share%20more%20details." target="_blank" rel="noopener noreferrer" className="group bg-secondary text-white px-6 sm:px-8 py-3.5 sm:py-4 rounded-xl font-semibold text-base sm:text-lg hover:bg-green-700 active:bg-green-800 transition-all shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 active:scale-95 flex items-center justify-center gap-2 touch-manipulation">
+                  <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
                   </svg>
+                  Start Free Trial on WhatsApp
                 </a>
                 <a href="#features" className="bg-white text-primary border-2 border-primary px-6 sm:px-8 py-3.5 sm:py-4 rounded-xl font-semibold text-base sm:text-lg hover:bg-lightgrey active:bg-blue-50 transition-all shadow-md hover:shadow-lg active:scale-95 touch-manipulation">
                   Explore Features
@@ -253,7 +259,7 @@ export default function Home() {
                   <svg className="w-4 h-4 sm:w-5 sm:h-5 text-secondary" fill="currentColor" viewBox="0 0 20 20">
                     <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                   </svg>
-                  <span>Setup in 24 hours</span>
+                  <span>Typically ready in 24-48h</span>
                 </div>
               </div>
 
@@ -358,6 +364,121 @@ export default function Home() {
           </div>
         </section>
 
+        <section className="py-16 md:py-24 px-4 bg-gradient-to-b from-white to-lightgrey">
+          <div className="max-w-7xl mx-auto">
+            <div className="text-center mb-16">
+              <h2 className="text-3xl md:text-4xl font-bold text-darkgrey mb-4">
+                Real Scenarios: How Different Industries Save Time
+              </h2>
+              <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+                From IT companies to agencies, see how our human-in-the-loop system helps teams focus on what matters
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all border-l-4 border-primary">
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="text-4xl">💻</div>
+                  <h3 className="text-xl font-bold text-darkgrey">IT Services & Software Companies</h3>
+                </div>
+                <div className="space-y-3 text-gray-700">
+                  <p className="text-sm"><strong className="text-primary">Before:</strong> Senior developers spend 10-12 hours/month conducting technical rounds, taking time away from actual development.</p>
+                  <p className="text-sm"><strong className="text-secondary">After:</strong> AI handles initial technical screening. Developers only interview top 20% candidates, reclaiming 8+ hours monthly for feature building and code reviews.</p>
+                  <p className="text-xs text-gray-600 italic mt-4">💡 HR still makes final decisions. The system just filters out clearly unqualified candidates first.</p>
+                </div>
+              </div>
+
+              <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all border-l-4 border-secondary">
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="text-4xl">🎨</div>
+                  <h3 className="text-xl font-bold text-darkgrey">Digital Marketing & Creative Agencies</h3>
+                </div>
+                <div className="space-y-3 text-gray-700">
+                  <p className="text-sm"><strong className="text-primary">Before:</strong> HR with limited marketing knowledge struggles to screen candidates for specialized roles (SEO, PPC, content).</p>
+                  <p className="text-sm"><strong className="text-secondary">After:</strong> Platform asks role-specific questions even if HR isn't an expert. AI detects copy-pasted responses. HR can conduct interviews confidently.</p>
+                  <p className="text-xs text-gray-600 italic mt-4">💡 Even on Google Meet, candidates might give scripted answers. Our AI flags suspicious patterns in responses.</p>
+                </div>
+              </div>
+
+              <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all border-l-4 border-accent">
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="text-4xl">👔</div>
+                  <h3 className="text-xl font-bold text-darkgrey">Staffing & Recruitment Firms</h3>
+                </div>
+                <div className="space-y-3 text-gray-700">
+                  <p className="text-sm"><strong className="text-primary">Before:</strong> Recruiters manually screen 100+ resumes daily, spending 20+ hours weekly on initial filtering.</p>
+                  <p className="text-sm"><strong className="text-secondary">After:</strong> AI pre-screens candidates 24/7. Recruiters focus on relationship building with top candidates and client servicing.</p>
+                  <p className="text-xs text-gray-600 italic mt-4">💡 System complements your expertise – doesn't replace your judgment in selecting the right fit for clients.</p>
+                </div>
+              </div>
+
+              <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all border-l-4 border-purple-500">
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="text-4xl">📊</div>
+                  <h3 className="text-xl font-bold text-darkgrey">Consulting & Professional Services</h3>
+                </div>
+                <div className="space-y-3 text-gray-700">
+                  <p className="text-sm"><strong className="text-primary">Before:</strong> Partners waste billable hours on initial candidate screening instead of client work.</p>
+                  <p className="text-sm"><strong className="text-secondary">After:</strong> Automated screening frees partners to focus on client deliverables. Only meet pre-qualified candidates who match firm culture.</p>
+                  <p className="text-xs text-gray-600 italic mt-4">💡 Your team remains in control of final hiring – system just saves time on obvious mismatches.</p>
+                </div>
+              </div>
+
+              <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all border-l-4 border-orange-500">
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="text-4xl">🏭</div>
+                  <h3 className="text-xl font-bold text-darkgrey">Manufacturing & Production</h3>
+                </div>
+                <div className="space-y-3 text-gray-700">
+                  <p className="text-sm"><strong className="text-primary">Before:</strong> Hiring supervisors and quality managers for shifts requires extensive technical screening by operations team.</p>
+                  <p className="text-sm"><strong className="text-secondary">After:</strong> Platform assesses technical knowledge and safety awareness. Operations team interviews only qualified candidates.</p>
+                  <p className="text-xs text-gray-600 italic mt-4">💡 Need custom questions for your industry? We can configure them in 72 hours.</p>
+                </div>
+              </div>
+
+              <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all border-l-4 border-pink-500">
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="text-4xl">🛍️</div>
+                  <h3 className="text-xl font-bold text-darkgrey">Retail & E-commerce</h3>
+                </div>
+                <div className="space-y-3 text-gray-700">
+                  <p className="text-sm"><strong className="text-primary">Before:</strong> High-volume hiring for stores and warehouses overwhelms small HR teams with hundreds of applications.</p>
+                  <p className="text-sm"><strong className="text-secondary">After:</strong> Bulk screening handles volume. HR focuses on culture fit interviews and onboarding excellent candidates.</p>
+                  <p className="text-xs text-gray-600 italic mt-4">💡 Scales with your hiring spikes during festival seasons – no extra monthly costs.</p>
+                </div>
+              </div>
+            </div>
+
+            <div className="mt-12 text-center bg-blue-50 border-2 border-primary rounded-2xl p-8 max-w-4xl mx-auto">
+              <h3 className="text-2xl font-bold text-darkgrey mb-4">💡 The Bottom Line</h3>
+              <p className="text-gray-700 leading-relaxed text-lg mb-4">
+                We're honest: no system is perfect. Determined candidates can attempt workarounds. But here's what's real:
+              </p>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-left">
+                <div className="flex items-start gap-2">
+                  <span className="text-secondary text-xl">✓</span>
+                  <p className="text-gray-700"><strong>15-20 hours saved</strong> monthly for HR teams</p>
+                </div>
+                <div className="flex items-start gap-2">
+                  <span className="text-secondary text-xl">✓</span>
+                  <p className="text-gray-700"><strong>8-12 hours reclaimed</strong> by senior developers</p>
+                </div>
+                <div className="flex items-start gap-2">
+                  <span className="text-secondary text-xl">✓</span>
+                  <p className="text-gray-700"><strong>HR stays in control</strong> – makes all final decisions</p>
+                </div>
+                <div className="flex items-start gap-2">
+                  <span className="text-secondary text-xl">✓</span>
+                  <p className="text-gray-700"><strong>AI flags suspicious</strong> copy-paste patterns</p>
+                </div>
+              </div>
+              <p className="text-gray-600 text-sm mt-6 italic">
+                Your team focuses on strategic work. The system handles repetitive screening. You maintain complete hiring authority.
+              </p>
+            </div>
+          </div>
+        </section>
+
         <section className="py-16 md:py-24 px-4 bg-white">
           <div className="max-w-7xl mx-auto">
             <div className="text-center mb-16">
@@ -376,9 +497,9 @@ export default function Home() {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
                   </svg>
                 </div>
-                <h3 className="text-2xl font-bold text-darkgrey mb-4">Lightning Fast Setup</h3>
+                <h3 className="text-2xl font-bold text-darkgrey mb-4">Fast, Personalized Setup</h3>
                 <p className="text-gray-600 leading-relaxed">
-                  Get up and running in minutes, not weeks. Our expert team handles the complete setup and training for you.
+                  Typically ready in 24-48 hours with personalized training. Our expert team handles the complete setup and ensures you're fully prepared to start.
                 </p>
               </div>
 
@@ -400,9 +521,9 @@ export default function Home() {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z" />
                   </svg>
                 </div>
-                <h3 className="text-2xl font-bold text-darkgrey mb-4">Dedicated Support</h3>
+                <h3 className="text-2xl font-bold text-darkgrey mb-4">Human-in-the-Loop System</h3>
                 <p className="text-gray-600 leading-relaxed">
-                  Get priority support from our expert team. We're always here to help you maximize your investment.
+                  We don't replace your team – we make them more efficient. Your HR retains full control while saving 15-20 hours monthly on repetitive screening tasks.
                 </p>
               </div>
             </div>
@@ -677,9 +798,9 @@ export default function Home() {
 
               <div className="bg-white p-8 rounded-2xl shadow-xl border-2 border-primary hover:shadow-2xl transition-all transform hover:-translate-y-2">
                 <div className="text-6xl mb-6 text-center">⚡</div>
-                <h3 className="text-2xl font-bold text-darkgrey mb-4 text-center">24-Hour Setup Guarantee</h3>
+                <h3 className="text-2xl font-bold text-darkgrey mb-4 text-center">Fast Setup (Typically 24-48h)</h3>
                 <p className="text-gray-600 text-center leading-relaxed">
-                  Your system will be fully operational within 24 hours of payment. If we miss this deadline, get ₹5,000 discount or free premium support upgrade.
+                  Most clients are up and running within 24-48 hours of payment, including personalized training. Complex customizations may take slightly longer, but we'll keep you updated every step of the way.
                 </p>
               </div>
 
