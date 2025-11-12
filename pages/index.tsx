@@ -1,6 +1,10 @@
 import Head from 'next/head';
 import { useState } from 'react';
-import QuizModal from '../components/QuizModal';
+import dynamic from 'next/dynamic';
+
+const QuizModal = dynamic(() => import('../components/QuizModal'), { ssr: false });
+const CountdownTimer = dynamic(() => import('../components/CountdownTimer'), { ssr: false });
+const ROICalculator = dynamic(() => import('../components/ROICalculator'), { ssr: false });
 
 export default function Home() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -81,6 +85,46 @@ export default function Home() {
     }
   ];
 
+  const faqs = [
+    {
+      question: "What happens after I make the payment?",
+      answer: "Within 24 hours, our team will set up your complete system, provide training, and ensure you're ready to start using all features. You'll get dedicated onboarding support."
+    },
+    {
+      question: "Is the ₹15,000 really a one-time payment?",
+      answer: "Yes! Pay once and own it forever. No monthly fees, no hidden costs, no recurring charges. You get lifetime access, free hosting, and all future updates included."
+    },
+    {
+      question: "Can I really save money compared to other solutions?",
+      answer: "Absolutely! Most HR and project management tools charge ₹5,000-20,000 per month. That's ₹60,000-2,40,000 per year! Our one-time ₹15,000 pays for itself in just 1-3 months."
+    },
+    {
+      question: "What if I need help or have technical issues?",
+      answer: "You get priority support via phone, WhatsApp, and email. Our expert team responds within hours to ensure your business never stops running."
+    },
+    {
+      question: "How secure is my data?",
+      answer: "We use bank-level SSL encryption, GDPR-compliant data handling, and secure cloud hosting. Your candidate and client data is completely safe and private."
+    },
+    {
+      question: "Can the system grow with my business?",
+      answer: "Yes! Whether you're hiring 5 or 500 people, managing 2 or 200 projects, our system scales seamlessly. Unlimited users, unlimited projects, unlimited growth."
+    }
+  ];
+
+  const comparisonData = [
+    { feature: "One-Time Payment", cehpoint: true, others: false },
+    { feature: "Lifetime Updates", cehpoint: true, others: false },
+    { feature: "Free Hosting Forever", cehpoint: true, others: false },
+    { feature: "AI-Powered Assessments", cehpoint: true, others: "Paid Extra" },
+    { feature: "Cheating Protection", cehpoint: true, others: false },
+    { feature: "Auto Quotation System", cehpoint: true, others: false },
+    { feature: "Client Dashboard", cehpoint: true, others: "Paid Extra" },
+    { feature: "Priority Support", cehpoint: true, others: "Paid Extra" },
+    { feature: "Setup & Training", cehpoint: "Free", others: "₹10,000+" },
+    { feature: "Monthly Cost", cehpoint: "₹0", others: "₹5,000-20,000" }
+  ];
+
   return (
     <>
       <Head>
@@ -150,10 +194,14 @@ export default function Home() {
               
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-darkgrey mb-6 leading-tight">
                 Revolutionize Your Hiring &<br />
-                <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+                <span className="text-gradient">
                   Project Management
                 </span>
               </h1>
+              
+              <div className="inline-block bg-yellow-100 border-2 border-yellow-400 px-6 py-2 rounded-full mb-4">
+                <span className="text-accent font-bold text-sm">⚡ LIMITED TIME: Save ₹35,000 • Only 47 Spots Left!</span>
+              </div>
               
               <p className="text-xl md:text-2xl text-gray-600 mb-8 leading-relaxed">
                 Complete AI-powered ATS + Business Management System.<br />
@@ -339,6 +387,20 @@ export default function Home() {
           </div>
         </section>
 
+        <section className="py-16 md:py-24 px-4 bg-gradient-to-b from-white to-lightgrey">
+          <div className="max-w-4xl mx-auto">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl md:text-4xl font-bold text-darkgrey mb-4">
+                See How Much You'll Save
+              </h2>
+              <p className="text-xl text-gray-600">
+                Use our interactive calculator to discover your exact ROI
+              </p>
+            </div>
+            <ROICalculator />
+          </div>
+        </section>
+
         <section id="pricing" className="py-16 md:py-24 px-4 bg-gradient-to-b from-lightgrey to-white">
           <div className="max-w-7xl mx-auto">
             <div className="text-center mb-16">
@@ -411,14 +473,60 @@ export default function Home() {
                     </div>
                   </div>
 
-                  <div className="bg-lightgrey rounded-xl p-6 mb-8">
+                  <div className="bg-gradient-to-r from-yellow-50 to-orange-50 border-2 border-yellow-300 rounded-xl p-6 mb-8">
                     <div className="text-center">
-                      <p className="text-gray-600 mb-2">ROI Calculator:</p>
-                      <p className="text-lg text-darkgrey">
-                        If you're currently spending <strong>₹5,000/month</strong> on separate tools,<br />
-                        <strong className="text-secondary">you'll break even in just 3 months!</strong>
-                      </p>
+                      <p className="text-lg font-bold text-darkgrey mb-3">💰 Calculate Your Savings:</p>
+                      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+                        <div className="bg-white p-4 rounded-lg">
+                          <p className="text-sm text-gray-600 mb-1">Other Tools (per year)</p>
+                          <p className="text-2xl font-bold text-accent">₹60,000 - ₹2,40,000</p>
+                          <p className="text-xs text-gray-500">Monthly subscriptions add up!</p>
+                        </div>
+                        <div className="bg-white p-4 rounded-lg">
+                          <p className="text-sm text-gray-600 mb-1">Cehpoint (lifetime)</p>
+                          <p className="text-2xl font-bold text-secondary">₹15,000</p>
+                          <p className="text-xs text-gray-500">Pay once, save forever!</p>
+                        </div>
+                      </div>
+                      <div className="bg-secondary text-white p-4 rounded-lg">
+                        <p className="text-lg md:text-xl font-bold">
+                          Save ₹45,000 - ₹2,25,000 in Year 1 Alone! 💰
+                        </p>
+                      </div>
                     </div>
+                  </div>
+
+                  <div className="bg-blue-50 border-2 border-primary rounded-xl p-6 mb-8">
+                    <h4 className="font-bold text-darkgrey mb-4 text-center text-lg">What You Get With Your ₹15,000 Investment:</h4>
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-3 text-sm">
+                      <div className="flex items-start gap-2">
+                        <span className="text-secondary">✓</span>
+                        <span>Resume parsing AI (worth ₹8,000/year)</span>
+                      </div>
+                      <div className="flex items-start gap-2">
+                        <span className="text-secondary">✓</span>
+                        <span>Cheating detection system (worth ₹10,000/year)</span>
+                      </div>
+                      <div className="flex items-start gap-2">
+                        <span className="text-secondary">✓</span>
+                        <span>Project management suite (worth ₹15,000/year)</span>
+                      </div>
+                      <div className="flex items-start gap-2">
+                        <span className="text-secondary">✓</span>
+                        <span>Client portal & dashboard (worth ₹12,000/year)</span>
+                      </div>
+                      <div className="flex items-start gap-2">
+                        <span className="text-secondary">✓</span>
+                        <span>Unlimited cloud hosting (worth ₹8,000/year)</span>
+                      </div>
+                      <div className="flex items-start gap-2">
+                        <span className="text-secondary">✓</span>
+                        <span>Premium support access (worth ₹6,000/year)</span>
+                      </div>
+                    </div>
+                    <p className="text-center mt-4 font-bold text-primary">
+                      Total Value: ₹59,000/year • You Pay: ₹15,000 Once
+                    </p>
                   </div>
 
                   <a
@@ -433,6 +541,156 @@ export default function Home() {
                   </p>
                 </div>
               </div>
+            </div>
+          </div>
+        </section>
+
+        <section className="py-16 md:py-24 px-4 bg-gradient-to-br from-green-50 via-white to-blue-50">
+          <div className="max-w-7xl mx-auto">
+            <div className="text-center mb-16">
+              <h2 className="text-3xl md:text-4xl font-bold text-darkgrey mb-4">
+                🛡️ Our Iron-Clad Guarantees
+              </h2>
+              <p className="text-xl text-gray-600">
+                Your success is guaranteed. We stand behind our product 100%
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+              <div className="bg-white p-8 rounded-2xl shadow-xl border-2 border-secondary hover:shadow-2xl transition-all transform hover:-translate-y-2">
+                <div className="text-6xl mb-6 text-center">💯</div>
+                <h3 className="text-2xl font-bold text-darkgrey mb-4 text-center">100% Satisfaction Guarantee</h3>
+                <p className="text-gray-600 text-center leading-relaxed">
+                  Not happy? Get a full refund within 30 days. No questions asked. We're confident you'll love it, but your satisfaction is our priority.
+                </p>
+              </div>
+
+              <div className="bg-white p-8 rounded-2xl shadow-xl border-2 border-primary hover:shadow-2xl transition-all transform hover:-translate-y-2">
+                <div className="text-6xl mb-6 text-center">⚡</div>
+                <h3 className="text-2xl font-bold text-darkgrey mb-4 text-center">24-Hour Setup Guarantee</h3>
+                <p className="text-gray-600 text-center leading-relaxed">
+                  Your system will be fully operational within 24 hours of payment. If we miss this deadline, get ₹5,000 discount or free premium support upgrade.
+                </p>
+              </div>
+
+              <div className="bg-white p-8 rounded-2xl shadow-xl border-2 border-accent hover:shadow-2xl transition-all transform hover:-translate-y-2">
+                <div className="text-6xl mb-6 text-center">🔒</div>
+                <h3 className="text-2xl font-bold text-darkgrey mb-4 text-center">Lifetime Support Guarantee</h3>
+                <p className="text-gray-600 text-center leading-relaxed">
+                  Priority support for life. Technical issues? Questions? We respond within 4 hours during business hours. Your success is our success.
+                </p>
+              </div>
+            </div>
+
+            <div className="mt-12 bg-gradient-to-r from-primary to-secondary p-8 rounded-2xl shadow-2xl max-w-4xl mx-auto">
+              <div className="text-center text-white">
+                <h3 className="text-2xl md:text-3xl font-bold mb-4">
+                  💰 ROI Guarantee: Break Even in 3 Months or Less
+                </h3>
+                <p className="text-lg md:text-xl leading-relaxed opacity-95">
+                  If our system doesn't save you at least ₹5,000 in time and efficiency within 90 days, 
+                  we'll work with you for FREE until it does. Your investment will pay for itself – guaranteed.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section className="py-16 md:py-24 px-4 bg-white">
+          <div className="max-w-7xl mx-auto">
+            <div className="text-center mb-16">
+              <h2 className="text-3xl md:text-4xl font-bold text-darkgrey mb-4">
+                Cehpoint vs. Other Solutions
+              </h2>
+              <p className="text-xl text-gray-600">
+                See why smart businesses choose Cehpoint
+              </p>
+            </div>
+
+            <div className="max-w-5xl mx-auto overflow-x-auto">
+              <table className="w-full bg-white rounded-2xl shadow-xl overflow-hidden">
+                <thead>
+                  <tr className="bg-gradient-to-r from-primary to-blue-700 text-white">
+                    <th className="py-4 px-6 text-left text-lg font-bold">Feature</th>
+                    <th className="py-4 px-6 text-center text-lg font-bold">Cehpoint</th>
+                    <th className="py-4 px-6 text-center text-lg font-bold">Others</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {comparisonData.map((row, index) => (
+                    <tr key={index} className={`border-b border-gray-100 ${index % 2 === 0 ? 'bg-gray-50' : 'bg-white'} hover:bg-blue-50 transition-colors`}>
+                      <td className="py-4 px-6 font-semibold text-darkgrey">{row.feature}</td>
+                      <td className="py-4 px-6 text-center">
+                        {row.cehpoint === true ? (
+                          <div className="flex justify-center">
+                            <div className="bg-secondary text-white rounded-full p-1">
+                              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
+                              </svg>
+                            </div>
+                          </div>
+                        ) : (
+                          <span className="font-bold text-primary">{row.cehpoint}</span>
+                        )}
+                      </td>
+                      <td className="py-4 px-6 text-center">
+                        {row.others === false ? (
+                          <div className="flex justify-center">
+                            <div className="bg-accent text-white rounded-full p-1">
+                              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M6 18L18 6M6 6l12 12" />
+                              </svg>
+                            </div>
+                          </div>
+                        ) : (
+                          <span className="text-gray-600">{row.others}</span>
+                        )}
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+
+            <div className="text-center mt-12">
+              <a href="#contact" className="inline-block bg-secondary text-white px-12 py-5 rounded-xl font-bold text-xl hover:bg-green-700 transition-all shadow-lg hover:shadow-2xl transform hover:scale-105">
+                Choose Cehpoint - Save ₹35,000 Today
+              </a>
+            </div>
+          </div>
+        </section>
+
+        <section className="py-16 md:py-24 px-4 bg-gradient-to-b from-lightgrey to-white">
+          <div className="max-w-7xl mx-auto">
+            <div className="text-center mb-16">
+              <h2 className="text-3xl md:text-4xl font-bold text-darkgrey mb-4">
+                Frequently Asked Questions
+              </h2>
+              <p className="text-xl text-gray-600">
+                Everything you need to know before getting started
+              </p>
+            </div>
+
+            <div className="max-w-4xl mx-auto space-y-6">
+              {faqs.map((faq, index) => (
+                <div key={index} className="bg-white rounded-2xl shadow-lg p-6 md:p-8 hover:shadow-xl transition-all border-l-4 border-primary">
+                  <h3 className="text-xl font-bold text-darkgrey mb-3 flex items-start gap-3">
+                    <span className="text-primary text-2xl">Q:</span>
+                    {faq.question}
+                  </h3>
+                  <p className="text-gray-700 leading-relaxed pl-8">
+                    <strong className="text-secondary">A:</strong> {faq.answer}
+                  </p>
+                </div>
+              ))}
+            </div>
+
+            <div className="mt-16 text-center bg-blue-50 border-2 border-primary rounded-2xl p-8">
+              <h3 className="text-2xl font-bold text-darkgrey mb-4">Still Have Questions?</h3>
+              <p className="text-gray-700 mb-6">Our team is ready to answer all your questions and show you how Cehpoint can transform your business.</p>
+              <a href="#contact" className="inline-block bg-primary text-white px-10 py-4 rounded-xl font-bold text-lg hover:bg-blue-700 transition-all shadow-lg">
+                Talk to Our Expert Team
+              </a>
             </div>
           </div>
         </section>
@@ -552,7 +810,35 @@ export default function Home() {
               </a>
             </div>
 
-            <div className="mt-16 bg-gradient-to-r from-primary to-secondary rounded-3xl p-8 md:p-12 text-white text-center max-w-4xl mx-auto">
+            <div className="mt-16 bg-gradient-to-r from-accent via-red-600 to-accent rounded-3xl p-8 md:p-12 text-white text-center max-w-5xl mx-auto shadow-2xl">
+              <div className="inline-block bg-yellow-400 text-darkgrey px-6 py-2 rounded-full text-sm font-bold mb-6 animate-pulse">
+                ⏰ LIMITED TIME OFFER - PRICE INCREASING SOON!
+              </div>
+              <h3 className="text-3xl md:text-4xl font-bold mb-4">
+                Don't Miss Out: Only 47 Spots Left at This Price!
+              </h3>
+              <p className="text-xl md:text-2xl mb-6 opacity-95 leading-relaxed">
+                After we reach 500 customers, the price will increase to ₹30,000. 
+                <br />Lock in your ₹15,000 lifetime access NOW and save ₹15,000 more!
+              </p>
+              <div className="bg-white/20 backdrop-blur-sm rounded-xl p-6 mb-6">
+                <p className="text-2xl font-bold mb-4">⚡ Act Fast: Offer Expires in</p>
+                <CountdownTimer />
+              </div>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="tel:+913369029331" className="bg-white text-accent px-10 py-5 rounded-xl font-bold text-xl hover:bg-lightgrey transition-all shadow-2xl transform hover:scale-105">
+                  🔥 Call Now: +91 33690 29331
+                </a>
+                <a href="https://wa.me/919091156095" target="_blank" rel="noopener noreferrer" className="bg-secondary text-white px-10 py-5 rounded-xl font-bold text-xl hover:bg-green-700 transition-all shadow-2xl transform hover:scale-105">
+                  💬 Get Started on WhatsApp
+                </a>
+              </div>
+              <p className="mt-6 text-sm opacity-90">
+                Join 453 smart businesses who already locked in this price
+              </p>
+            </div>
+
+            <div className="mt-12 bg-gradient-to-r from-primary to-secondary rounded-3xl p-8 md:p-12 text-white text-center max-w-4xl mx-auto">
               <h3 className="text-2xl md:text-3xl font-bold mb-4">
                 Be Smart. Be Organized. Choose Cehpoint.
               </h3>
@@ -563,7 +849,7 @@ export default function Home() {
                 <a href="tel:+913369029331" className="bg-white text-primary px-8 py-4 rounded-xl font-semibold text-lg hover:bg-lightgrey transition-all shadow-lg">
                   Call Now: +91 33690 29331
                 </a>
-                <a href="https://wa.me/919091156095" target="_blank" rel="noopener noreferrer" className="bg-secondary text-white px-8 py-4 rounded-xl font-semibold text-lg hover:bg-green-700 transition-all shadow-lg">
+                <a href="https://wa.me/919091156095" target="_blank" rel="noopener noreferrer" className="bg-green-600 text-white px-8 py-4 rounded-xl font-semibold text-lg hover:bg-green-700 transition-all shadow-lg">
                   Chat on WhatsApp
                 </a>
               </div>
