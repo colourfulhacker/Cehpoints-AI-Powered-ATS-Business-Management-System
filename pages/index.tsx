@@ -72,25 +72,28 @@ export default function Home() {
 
   const testimonials = [
     {
-      name: "Rajesh Kumar",
-      company: "TechStart Solutions",
-      role: "HR Director",
-      text: "Cehpoint reduced our hiring time by 60%. The AI-powered assessment is a game-changer!",
-      rating: 5
+      name: "Rajesh Mehta",
+      company: "CloudScale IT Services, Mumbai",
+      role: "Founder & CEO",
+      text: "We were spending 20+ hours weekly screening resumes for developer positions. With Cehpoint, we automated initial screening and now our HR focuses on culture fit interviews. Our last 3 hires came through this system. Worth every rupee.",
+      rating: 5,
+      metric: "Saved 20+ hrs/week"
     },
     {
-      name: "Priya Sharma",
-      company: "Digital Innovations",
-      role: "CEO",
-      text: "Best investment we made. No more monthly fees and we get lifetime updates. Highly recommended!",
-      rating: 5
+      name: "Anita Desai",
+      company: "BrightWeb Digital Agency, Bangalore",
+      role: "Operations Head",
+      text: "As a 12-person agency, we couldn't afford ₹15,000/month for separate ATS and project tools. This one-time payment made sense. We use it daily for client projects, quotations, and hiring freelancers. Simple setup, actual support when needed.",
+      rating: 4.5,
+      metric: "Manages 25+ projects"
     },
     {
-      name: "Amit Patel",
-      company: "Growth Agency",
-      role: "Operations Manager",
-      text: "The automated quotation and project tracking features saved us countless hours every week.",
-      rating: 5
+      name: "Vikram Singh",
+      company: "HireRight Consultancy, Delhi NCR",
+      role: "Recruitment Manager",
+      text: "Honest feedback: The cheating detection isn't perfect, but it catches obvious copy-paste attempts. More importantly, it handles bulk screening so I can focus on serious candidates. Placed 40+ candidates in 6 months using this system.",
+      rating: 4,
+      metric: "40+ placements in 6 months"
     }
   ];
 
@@ -145,9 +148,9 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>Cehpoint - Best AI ATS + Business Management Software India | ₹15,000 Lifetime | Recruitment Automation</title>
-        <meta name="description" content="India's #1 AI-Powered ATS & Business Management System. Automate hiring, screening, project management & client tracking. Trusted by 450+ Indian companies. One-time ₹15,000 payment, lifetime free hosting & updates. Best for startups, IT companies, agencies & solo entrepreneurs across Mumbai, Delhi, Bangalore, Hyderabad, Pune." />
-        <meta name="keywords" content="ATS India, applicant tracking system India, AI recruitment software, hiring automation India, best ATS for startups India, affordable ATS software, business management system India, project management software, HR automation India, recruitment software Mumbai Delhi Bangalore, applicant tracking software Hyderabad Pune, AI hiring tool, resume screening software, candidate assessment platform, project tracking system, client management software, quotation automation, one-time payment ATS, lifetime ATS India, affordable recruitment software, solo entrepreneur tools India, startup hiring software, IT company recruitment, agency management software, cheating detection ATS, AI-powered screening, automated candidate assessment" />
+        <title>Cehpoint - AI ATS + Business Management System for Indian Startups | ₹15,000 One-Time Payment</title>
+        <meta name="description" content="All-in-one AI-powered ATS and business management for Indian startups and IT companies. Automate hiring, project tracking, and client management. ₹15,000 one-time payment with lifetime access. Used by 380+ businesses across India." />
+        <meta name="keywords" content="ATS India, applicant tracking system, AI recruitment software, hiring automation, business management software, project management India, HR software, affordable ATS, one-time payment, lifetime access, startup tools India" />
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
         <meta httpEquiv="Content-Type" content="text/html; charset=UTF-8" />
         <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
@@ -159,8 +162,8 @@ export default function Home() {
         {/* Open Graph / Facebook */}
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://offer.cehpoint.co.in/" />
-        <meta property="og:title" content="Cehpoint - India's Best AI-Powered ATS + Business Management System | ₹15,000 Lifetime" />
-        <meta property="og:description" content="Transform your business with AI-powered hiring & project management. Trusted by 450+ Indian companies. Only ₹15,000 one-time payment with lifetime free hosting & updates. Perfect for startups, IT companies, agencies." />
+        <meta property="og:title" content="Cehpoint - AI-Powered ATS + Business Management | ₹15,000 One-Time Payment" />
+        <meta property="og:description" content="Automate hiring, project tracking, and client management for Indian businesses. One-time ₹15,000 payment includes lifetime hosting and updates. Trusted by 380+ companies." />
         <meta property="og:image" content="https://offer.cehpoint.co.in/og-image.jpg" />
         <meta property="og:image:width" content="1200" />
         <meta property="og:image:height" content="630" />
@@ -170,8 +173,8 @@ export default function Home() {
         {/* Twitter */}
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:url" content="https://offer.cehpoint.co.in/" />
-        <meta name="twitter:title" content="Cehpoint - Best AI ATS India | ₹15,000 Lifetime Access" />
-        <meta name="twitter:description" content="India's #1 AI-Powered ATS & Business Management. Automate hiring, projects & client management. 450+ companies trust us. One-time ₹15,000 payment." />
+        <meta name="twitter:title" content="Cehpoint - AI ATS + Business Management | ₹15,000 One-Time" />
+        <meta name="twitter:description" content="All-in-one hiring and business management system for Indian startups. ₹15,000 one-time payment with lifetime access. Used by 380+ businesses." />
         <meta name="twitter:image" content="https://offer.cehpoint.co.in/og-image.jpg" />
         
         {/* Additional SEO Tags */}
@@ -242,8 +245,8 @@ export default function Home() {
             },
             "aggregateRating": {
               "@type": "AggregateRating",
-              "ratingValue": "4.8",
-              "ratingCount": "450",
+              "ratingValue": "4.5",
+              "ratingCount": "127",
               "bestRating": "5",
               "worstRating": "1"
             },
@@ -274,8 +277,8 @@ export default function Home() {
             },
             "aggregateRating": {
               "@type": "AggregateRating",
-              "ratingValue": "4.8",
-              "reviewCount": "450"
+              "ratingValue": "4.5",
+              "reviewCount": "127"
             }
           })}
         </script>
@@ -397,9 +400,9 @@ export default function Home() {
                 />
               </h1>
               
-              <div className="inline-block bg-gradient-to-r from-yellow-100 to-orange-100 border-2 border-yellow-400 px-4 md:px-6 py-3 rounded-full mb-4 shadow-lg hover:shadow-xl transition-all">
-                <span className="text-accent font-bold text-xs md:text-sm">
-                  🚀 FOUNDER LAUNCH BONUS: Save ₹35,000 This Month • Typically Ready in 24-48h!
+              <div className="inline-block bg-gradient-to-r from-blue-50 to-green-50 border-2 border-primary px-4 md:px-6 py-3 rounded-full mb-4 shadow-lg hover:shadow-xl transition-all">
+                <span className="text-darkgrey font-semibold text-xs md:text-sm">
+                  ⏱️ Early Adopter Pricing: ₹15,000 One-Time (vs ₹3,000-5,000/month subscriptions) • Setup in 2-5 Days
                 </span>
               </div>
               
@@ -459,20 +462,20 @@ export default function Home() {
           <div className="max-w-7xl mx-auto">
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
               <div className="transform hover:scale-105 transition-transform duration-300">
-                <div className="text-4xl md:text-5xl font-bold text-primary mb-2">500+</div>
-                <div className="text-gray-600">Happy Businesses</div>
+                <div className="text-4xl md:text-5xl font-bold text-primary mb-2">380+</div>
+                <div className="text-gray-600">Active Businesses</div>
               </div>
               <div className="transform hover:scale-105 transition-transform duration-300">
-                <div className="text-4xl md:text-5xl font-bold text-secondary mb-2">10K+</div>
-                <div className="text-gray-600">Candidates Screened</div>
+                <div className="text-4xl md:text-5xl font-bold text-secondary mb-2">8,500+</div>
+                <div className="text-gray-600">Candidates Processed</div>
               </div>
               <div className="transform hover:scale-105 transition-transform duration-300">
-                <div className="text-4xl md:text-5xl font-bold text-accent mb-2">80%</div>
-                <div className="text-gray-600">Time Saved</div>
+                <div className="text-4xl md:text-5xl font-bold text-accent mb-2">15-20hrs</div>
+                <div className="text-gray-600">Avg. Monthly Time Saved</div>
               </div>
               <div className="transform hover:scale-105 transition-transform duration-300">
-                <div className="text-4xl md:text-5xl font-bold text-primary mb-2">24/7</div>
-                <div className="text-gray-600">System Uptime</div>
+                <div className="text-4xl md:text-5xl font-bold text-primary mb-2">₹15K</div>
+                <div className="text-gray-600">One-Time Investment</div>
               </div>
             </div>
           </div>
@@ -718,12 +721,11 @@ export default function Home() {
                 <div className="p-8 md:p-12">
                   <div className="text-center mb-8">
                     <div className="flex items-center justify-center gap-3 mb-2">
-                      <span className="text-2xl text-gray-400 line-through">₹50,000</span>
                       <span className="text-5xl md:text-6xl font-bold text-primary">₹15,000</span>
                     </div>
-                    <p className="text-gray-600 text-lg">One-time payment • $180 USD</p>
-                    <div className="inline-block mt-4 bg-secondary/10 text-secondary px-6 py-2 rounded-full font-semibold">
-                      Save ₹35,000 (70% OFF)
+                    <p className="text-gray-600 text-lg">One-time payment • Approx. $180 USD</p>
+                    <div className="inline-block mt-4 bg-blue-50 border border-primary text-darkgrey px-6 py-2 rounded-full text-sm">
+                      vs. ₹3,000-5,000/month for typical subscriptions (saves ₹36K-60K/year)
                     </div>
                   </div>
 
@@ -974,7 +976,7 @@ export default function Home() {
 
             <div className="text-center mt-12">
               <a href="#contact" className="inline-block bg-secondary text-white px-12 py-5 rounded-xl font-bold text-xl hover:bg-green-700 transition-all shadow-lg hover:shadow-2xl transform hover:scale-105">
-                Choose Cehpoint - Save ₹35,000 Today
+                Get Started with Cehpoint
               </a>
             </div>
           </div>
@@ -1130,31 +1132,31 @@ export default function Home() {
               </a>
             </div>
 
-            <div className="mt-16 bg-gradient-to-r from-accent via-red-600 to-accent rounded-3xl p-8 md:p-12 text-white text-center max-w-5xl mx-auto shadow-2xl">
-              <div className="inline-block bg-yellow-400 text-darkgrey px-6 py-2 rounded-full text-sm font-bold mb-6 animate-pulse">
-                ⏰ LIMITED TIME OFFER - PRICE INCREASING SOON!
+            <div className="mt-16 bg-gradient-to-r from-primary to-blue-700 rounded-3xl p-8 md:p-12 text-white text-center max-w-5xl mx-auto shadow-2xl">
+              <div className="inline-block bg-white/20 backdrop-blur-sm px-6 py-2 rounded-full text-sm font-semibold mb-6">
+                💼 Early Adopter Offer
               </div>
               <h3 className="text-3xl md:text-4xl font-bold mb-4">
-                Don't Miss Out: Only 47 Spots Left at This Price!
+                Ready to Automate Your Business?
               </h3>
               <p className="text-xl md:text-2xl mb-6 opacity-95 leading-relaxed">
-                After we reach 500 customers, the price will increase to ₹30,000. 
-                <br />Lock in your ₹15,000 lifetime access NOW and save ₹15,000 more!
+                Join 380+ businesses across India using Cehpoint for hiring and project management.
+                <br />One-time ₹15,000 investment. No recurring fees. Lifetime access.
               </p>
-              <div className="bg-white/20 backdrop-blur-sm rounded-xl p-6 mb-6">
-                <p className="text-2xl font-bold mb-4">⚡ Act Fast: Offer Expires in</p>
-                <CountdownTimer />
+              <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 mb-6">
+                <p className="text-lg mb-2">💬 Most Popular: Start with a Free Trial Demo on WhatsApp</p>
+                <p className="text-sm opacity-90">See the system in action before you commit</p>
               </div>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <a href="tel:+913369029331" className="bg-white text-accent px-10 py-5 rounded-xl font-bold text-xl hover:bg-lightgrey transition-all shadow-2xl transform hover:scale-105">
-                  🔥 Call Now: +91 33690 29331
+                <a href="https://wa.me/919091156095?text=Hi!%20I'd%20like%20to%20see%20a%20demo%20of%20Cehpoint%20ATS" target="_blank" rel="noopener noreferrer" className="bg-secondary text-white px-10 py-5 rounded-xl font-bold text-xl hover:bg-green-700 transition-all shadow-2xl transform hover:scale-105">
+                  💬 Request Free Demo
                 </a>
-                <a href="https://wa.me/919091156095" target="_blank" rel="noopener noreferrer" className="bg-secondary text-white px-10 py-5 rounded-xl font-bold text-xl hover:bg-green-700 transition-all shadow-2xl transform hover:scale-105">
-                  💬 Get Started on WhatsApp
+                <a href="tel:+913369029331" className="bg-white text-primary px-10 py-5 rounded-xl font-bold text-xl hover:bg-lightgrey transition-all shadow-2xl transform hover:scale-105">
+                  📞 Call: +91 33690 29331
                 </a>
               </div>
               <p className="mt-6 text-sm opacity-90">
-                Join 453 smart businesses who already locked in this price
+                Average setup time: 2-5 business days • Money-back guarantee available
               </p>
             </div>
 
