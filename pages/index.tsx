@@ -5,14 +5,14 @@ import AnimatedText from '../components/AnimatedText';
 import AutomationJourney from '../components/AutomationJourney';
 import IndustryScenarioCarousel from '../components/IndustryScenarioCarousel';
 import IndustryGuarantees from '../components/IndustryGuarantees';
-import SocialShareButtons from '../components/SocialShareButtons';
-import CurrencyConverter from '../components/CurrencyConverter';
 import AffordabilityMessage from '../components/AffordabilityMessage';
-import DirectOrderForm from '../components/DirectOrderForm';
 
 const CountdownTimer = dynamic(() => import('../components/CountdownTimer'), { ssr: false });
 const EnhancedROICalculator = dynamic(() => import('../components/EnhancedROICalculator'), { ssr: false });
 const ComprehensiveAssessment = dynamic(() => import('../components/ComprehensiveAssessment'), { ssr: false });
+const CurrencyConverter = dynamic(() => import('../components/CurrencyConverter'), { ssr: false });
+const DirectOrderForm = dynamic(() => import('../components/DirectOrderForm'), { ssr: false });
+const SocialShareButtons = dynamic(() => import('../components/SocialShareButtons'), { ssr: false });
 
 export default function Home() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -145,14 +145,174 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>Cehpoint - AI-Powered ATS + Business Management System | ₹15,000 Lifetime Access</title>
-        <meta name="description" content="Revolutionize your hiring and project management with Cehpoint's AI-powered all-in-one system. Resume analysis, cheating protection, auto quotations, and more. Only ₹15,000 one-time payment with lifetime free hosting." />
-        <meta name="keywords" content="ATS, applicant tracking system, business management, project management, AI hiring, recruitment software, HR software, project tracking, India, affordable ATS" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta property="og:title" content="Cehpoint - AI-Powered ATS + Business Management System" />
-        <meta property="og:description" content="Complete hiring and project management solution. Only ₹15,000 one-time payment with lifetime benefits." />
+        <title>Cehpoint - Best AI ATS + Business Management Software India | ₹15,000 Lifetime | Recruitment Automation</title>
+        <meta name="description" content="India's #1 AI-Powered ATS & Business Management System. Automate hiring, screening, project management & client tracking. Trusted by 450+ Indian companies. One-time ₹15,000 payment, lifetime free hosting & updates. Best for startups, IT companies, agencies & solo entrepreneurs across Mumbai, Delhi, Bangalore, Hyderabad, Pune." />
+        <meta name="keywords" content="ATS India, applicant tracking system India, AI recruitment software, hiring automation India, best ATS for startups India, affordable ATS software, business management system India, project management software, HR automation India, recruitment software Mumbai Delhi Bangalore, applicant tracking software Hyderabad Pune, AI hiring tool, resume screening software, candidate assessment platform, project tracking system, client management software, quotation automation, one-time payment ATS, lifetime ATS India, affordable recruitment software, solo entrepreneur tools India, startup hiring software, IT company recruitment, agency management software, cheating detection ATS, AI-powered screening, automated candidate assessment" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
+        <meta httpEquiv="Content-Type" content="text/html; charset=UTF-8" />
+        <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+        <meta name="language" content="English, Hindi" />
+        <meta name="geo.region" content="IN" />
+        <meta name="geo.placename" content="India" />
+        <link rel="canonical" href="https://offer.cehpoint.co.in/" />
+        
+        {/* Open Graph / Facebook */}
         <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://offer.cehpoint.co.in/" />
+        <meta property="og:title" content="Cehpoint - India's Best AI-Powered ATS + Business Management System | ₹15,000 Lifetime" />
+        <meta property="og:description" content="Transform your business with AI-powered hiring & project management. Trusted by 450+ Indian companies. Only ₹15,000 one-time payment with lifetime free hosting & updates. Perfect for startups, IT companies, agencies." />
+        <meta property="og:image" content="https://offer.cehpoint.co.in/og-image.jpg" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta property="og:site_name" content="Cehpoint" />
+        <meta property="og:locale" content="en_IN" />
+        
+        {/* Twitter */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:url" content="https://offer.cehpoint.co.in/" />
+        <meta name="twitter:title" content="Cehpoint - Best AI ATS India | ₹15,000 Lifetime Access" />
+        <meta name="twitter:description" content="India's #1 AI-Powered ATS & Business Management. Automate hiring, projects & client management. 450+ companies trust us. One-time ₹15,000 payment." />
+        <meta name="twitter:image" content="https://offer.cehpoint.co.in/og-image.jpg" />
+        
+        {/* Additional SEO Tags */}
+        <meta name="author" content="Cehpoint Technologies" />
+        <meta name="publisher" content="Cehpoint" />
+        <meta name="copyright" content="Cehpoint Technologies" />
+        <meta name="rating" content="General" />
+        <meta name="distribution" content="global" />
+        <meta name="target" content="all" />
+        <meta name="audience" content="Businesses, Startups, IT Companies, Recruitment Agencies, Solo Entrepreneurs" />
+        
+        {/* Mobile App Capable */}
+        <meta name="mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+        <meta name="apple-mobile-web-app-title" content="Cehpoint ATS" />
+        
+        {/* Favicon */}
         <link rel="icon" href="/favicon.ico" />
+        <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+        
+        {/* Structured Data - Organization */}
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Organization",
+            "name": "Cehpoint",
+            "legalName": "Cehpoint Technologies",
+            "url": "https://offer.cehpoint.co.in",
+            "logo": "https://offer.cehpoint.co.in/logo.png",
+            "foundingDate": "2024",
+            "foundingLocation": "India",
+            "contactPoint": {
+              "@type": "ContactPoint",
+              "telephone": "+91-33690-29331",
+              "contactType": "Sales",
+              "areaServed": "IN",
+              "availableLanguage": ["English", "Hindi"]
+            },
+            "sameAs": [
+              "https://wa.me/919091156095"
+            ],
+            "address": {
+              "@type": "PostalAddress",
+              "addressCountry": "IN"
+            }
+          })}
+        </script>
+        
+        {/* Structured Data - Software Application */}
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "SoftwareApplication",
+            "name": "Cehpoint ATS + Business Management System",
+            "applicationCategory": "BusinessApplication",
+            "operatingSystem": "Web-based",
+            "offers": {
+              "@type": "Offer",
+              "price": "15000",
+              "priceCurrency": "INR",
+              "priceValidUntil": "2025-12-31",
+              "availability": "https://schema.org/InStock",
+              "seller": {
+                "@type": "Organization",
+                "name": "Cehpoint"
+              }
+            },
+            "aggregateRating": {
+              "@type": "AggregateRating",
+              "ratingValue": "4.8",
+              "ratingCount": "450",
+              "bestRating": "5",
+              "worstRating": "1"
+            },
+            "description": "AI-Powered Applicant Tracking System and Business Management Software for Indian businesses. Automate hiring, resume screening, project management, and client tracking.",
+            "featureList": ["AI Resume Screening", "Cheating Detection", "Auto Quotation Generation", "Project Management", "Client Dashboard", "Multi-User Access", "Automated Reporting"]
+          })}
+        </script>
+        
+        {/* Structured Data - Product */}
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Product",
+            "name": "Cehpoint - AI-Powered ATS + Business Management System",
+            "description": "Complete hiring automation and business management solution for Indian companies. One-time payment of ₹15,000 with lifetime access.",
+            "brand": {
+              "@type": "Brand",
+              "name": "Cehpoint"
+            },
+            "offers": {
+              "@type": "Offer",
+              "url": "https://offer.cehpoint.co.in",
+              "priceCurrency": "INR",
+              "price": "15000",
+              "priceValidUntil": "2025-12-31",
+              "availability": "https://schema.org/InStock",
+              "itemCondition": "https://schema.org/NewCondition"
+            },
+            "aggregateRating": {
+              "@type": "AggregateRating",
+              "ratingValue": "4.8",
+              "reviewCount": "450"
+            }
+          })}
+        </script>
+        
+        {/* Structured Data - FAQ */}
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "How much does Cehpoint cost?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Cehpoint costs only ₹15,000 as a one-time payment. This includes lifetime free hosting, all future updates, priority support, and complete setup assistance. No monthly or recurring fees ever."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Is Cehpoint suitable for startups in India?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Yes, Cehpoint is perfect for Indian startups. At ₹15,000 one-time payment, it's 90% cheaper than traditional ATS subscriptions. You get AI-powered hiring automation, project management, and client tracking in one system."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Does Cehpoint work for solo entrepreneurs?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Absolutely! Solo entrepreneurs can run their entire business with Cehpoint - from hiring freelancers to managing client projects, generating quotations, and tracking payments. It's like having a complete virtual team."
+                }
+              }
+            ]
+          })}
+        </script>
       </Head>
 
       <ComprehensiveAssessment triggerOpen={openAssessment} onClose={() => setOpenAssessment(false)} />
@@ -1036,7 +1196,7 @@ export default function Home() {
                   <li><a href="#features" className="hover:text-white transition-colors">Features</a></li>
                   <li><a href="#pricing" className="hover:text-white transition-colors">Pricing</a></li>
                   <li><a href="/use-cases" className="hover:text-white transition-colors">Use Cases</a></li>
-                  <li><button onClick={handleAssessmentClick} className="hover:text-white transition-colors">Free Trial</button></li>
+                  <li><button onClick={() => setOpenAssessment(true)} className="hover:text-white transition-colors">Free Trial</button></li>
                 </ul>
               </div>
 

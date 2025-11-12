@@ -208,9 +208,49 @@ export default function UseCases() {
   return (
     <>
       <Head>
-        <title>Use Cases - How Cehpoint Transforms Different Businesses | AI-Powered ATS</title>
-        <meta name="description" content="Real-world use cases: Solo entrepreneurs managing entire businesses, IT companies scaling hiring, agencies automating operations, and startups growing faster with Cehpoint." />
-        <meta name="keywords" content="solo entrepreneur tools, IT hiring automation, agency management, recruitment automation, startup business tools" />
+        <title>Cehpoint Use Cases India - Solo Entrepreneur, IT Companies, Agencies | Real Success Stories</title>
+        <meta name="description" content="Discover how 450+ Indian businesses use Cehpoint: Solo entrepreneurs running complete operations, IT companies automating hiring, agencies saving 20+ hours weekly, recruitment firms 3X-ing placements. Real results from Mumbai, Delhi, Bangalore startups. ₹15,000 one-time investment transforming businesses across India." />
+        <meta name="keywords" content="solo entrepreneur India case study, IT hiring automation success, agency management tools India, recruitment automation results, startup ATS success stories, business management case studies India, one-person business tools, freelancer management India, digital agency automation, IT company recruitment success, staffing firm automation, Bangalore startup tools, Mumbai entrepreneur software, Delhi business automation" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
+        <meta name="robots" content="index, follow" />
+        <link rel="canonical" href="https://offer.cehpoint.co.in/use-cases" />
+        
+        {/* Open Graph */}
+        <meta property="og:type" content="article" />
+        <meta property="og:url" content="https://offer.cehpoint.co.in/use-cases" />
+        <meta property="og:title" content="Real Success Stories - How Indian Businesses Use Cehpoint ATS" />
+        <meta property="og:description" content="From solo entrepreneurs to IT companies - see how Cehpoint transformed 450+ Indian businesses. Real results, real time savings, real growth." />
+        <meta property="og:image" content="https://offer.cehpoint.co.in/og-usecase.jpg" />
+        <meta property="og:locale" content="en_IN" />
+        
+        {/* Twitter */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Cehpoint Success Stories - Indian Business Transformations" />
+        <meta name="twitter:description" content="Solo entrepreneurs, IT companies, agencies - discover how Cehpoint helps Indian businesses automate and grow." />
+        
+        {/* Structured Data - Article */}
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Article",
+            "headline": "Real Business Use Cases - How Cehpoint Transforms Different Industries in India",
+            "description": "Comprehensive use cases showing how solo entrepreneurs, IT companies, digital agencies, recruitment firms, and startups use Cehpoint to automate and scale their operations.",
+            "author": {
+              "@type": "Organization",
+              "name": "Cehpoint"
+            },
+            "publisher": {
+              "@type": "Organization",
+              "name": "Cehpoint",
+              "logo": {
+                "@type": "ImageObject",
+                "url": "https://offer.cehpoint.co.in/logo.png"
+              }
+            },
+            "datePublished": "2025-11-12",
+            "dateModified": "2025-11-12"
+          })}
+        </script>
       </Head>
 
       <div className="min-h-screen bg-gradient-to-b from-lightgrey to-white">
