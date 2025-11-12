@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import LegalLayout from '../../components/legal/LegalLayout';
 
 export default function CookiePolicy() {
@@ -58,7 +59,7 @@ export default function CookiePolicy() {
             <ul className="list-disc pl-6 text-sm space-y-1">
               <li><strong>Preference Cookies:</strong> Remember your language, timezone, and display settings</li>
               <li><strong>Feature Toggles:</strong> Remember which features or views you prefer</li>
-              <li><strong>UI State:</strong> Recall whether you've minimized or expanded certain sections</li>
+              <li><strong>UI State:</strong> Recall whether you&apos;ve minimized or expanded certain sections</li>
             </ul>
           </div>
           <p className="mb-4">
@@ -211,7 +212,7 @@ export default function CookiePolicy() {
         <section>
           <h2 className="text-2xl font-bold text-darkgrey mb-4">10. More Information</h2>
           <p className="mb-4">
-            For more details on how we collect, use, and protect your personal data, please see our <a href="/legal/privacy" className="text-primary hover:underline">Privacy Policy</a>.
+            For more details on how we collect, use, and protect your personal data, please see our <Link href="/legal/privacy" className="text-primary hover:underline">Privacy Policy</Link>.
           </p>
           <p className="mb-4">
             If you want to learn more about cookies in general, visit <a href="https://www.allaboutcookies.org/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">allaboutcookies.org</a>.

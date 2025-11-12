@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import Link from 'next/link';
 
 export default function DirectOrderForm() {
   const [isOpen, setIsOpen] = useState(false);
@@ -115,7 +116,7 @@ Order Date: ${new Date().toLocaleString('en-IN')}
             <form onSubmit={handleSubmit} className="p-8 space-y-6">
               <div className="bg-blue-50 border-l-4 border-primary p-4 rounded-lg mb-6">
                 <p className="text-gray-700 text-sm">
-                  📧 Your order details will be sent to <strong>sales@cehpoint.co.in</strong> and our WhatsApp. We'll contact you within 24 hours to confirm and begin setup!
+                  📧 Your order details will be sent to <strong>sales@cehpoint.co.in</strong> and our WhatsApp. We&apos;ll contact you within 24 hours to confirm and begin setup!
                 </p>
               </div>
 
@@ -303,7 +304,7 @@ Order Date: ${new Date().toLocaleString('en-IN')}
                       I require GST billing (+18%)
                     </div>
                     <div className="text-sm text-gray-600 mt-1">
-                      Check this if you need a GST invoice for your business
+                      GST applies only for purchases in INR. If you need a GST invoice for your business, check this box.
                     </div>
                   </div>
                 </label>
@@ -343,7 +344,7 @@ Order Date: ${new Date().toLocaleString('en-IN')}
               </div>
 
               <p className="text-sm text-gray-600 text-center">
-                By submitting, you agree to our <a href="/legal/terms" className="text-primary hover:underline">Terms of Service</a> and <a href="/legal/privacy" className="text-primary hover:underline">Privacy Policy</a>
+                By submitting, you agree to our <Link href="/legal/terms" className="text-primary hover:underline">Terms of Service</Link> and <Link href="/legal/privacy" className="text-primary hover:underline">Privacy Policy</Link>
               </p>
             </form>
           </div>

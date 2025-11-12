@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import LegalLayout from '../../components/legal/LegalLayout';
 
 export default function TermsOfService() {
@@ -120,7 +121,7 @@ export default function TermsOfService() {
           <ul className="list-disc pl-6 space-y-2 mb-4">
             <li>Violate any applicable laws, regulations, or third-party rights</li>
             <li>Upload malicious software, viruses, or harmful code</li>
-            <li>Attempt to gain unauthorized access to our systems or other users' accounts</li>
+            <li>Attempt to gain unauthorized access to our systems or other users&apos; accounts</li>
             <li>Reverse engineer, decompile, or disassemble any part of the Services</li>
             <li>Use the Services to discriminate unlawfully in hiring or employment practices</li>
             <li>Share, resell, or redistribute access to the Services without our written consent</li>
@@ -180,7 +181,7 @@ export default function TermsOfService() {
         <section>
           <h2 className="text-2xl font-bold text-darkgrey mb-4">9. Data Security and Privacy</h2>
           <p className="mb-4">
-            We take data security seriously and implement industry-standard measures to protect your information. For details on how we collect, use, and protect your data, please review our <a href="/legal/privacy" className="text-primary hover:underline">Privacy Policy</a>.
+            We take data security seriously and implement industry-standard measures to protect your information. For details on how we collect, use, and protect your data, please review our <Link href="/legal/privacy" className="text-primary hover:underline">Privacy Policy</Link>.
           </p>
           <p className="mb-4">
             While we strive to protect your data, no system is completely secure. You acknowledge that you use the Services at your own risk and agree to take reasonable precautions to protect your account and data.
@@ -234,7 +235,7 @@ export default function TermsOfService() {
 
           <h3 className="text-xl font-semibold text-darkgrey mb-3 mt-4">13.2 Termination by You</h3>
           <p className="mb-4">
-            You may stop using the Services at any time. Account closure requests can be made by contacting our support team. Please note that one-time payments are non-refundable except as specified in our <a href="/legal/refund" className="text-primary hover:underline">Refund Policy</a>.
+            You may stop using the Services at any time. Account closure requests can be made by contacting our support team. Please note that one-time payments are non-refundable except as specified in our <Link href="/legal/refund" className="text-primary hover:underline">Refund Policy</Link>.
           </p>
 
           <h3 className="text-xl font-semibold text-darkgrey mb-3 mt-4">13.3 Termination by Us</h3>

@@ -1,4 +1,5 @@
 import Head from 'next/head';
+import Link from 'next/link';
 import { useState } from 'react';
 import dynamic from 'next/dynamic';
 import AnimatedText from '../components/AnimatedText';
@@ -12,7 +13,7 @@ const EnhancedROICalculator = dynamic(() => import('../components/EnhancedROICal
 const ComprehensiveAssessment = dynamic(() => import('../components/ComprehensiveAssessment'), { ssr: false });
 const CurrencyConverter = dynamic(() => import('../components/CurrencyConverter'), { ssr: false });
 const DirectOrderForm = dynamic(() => import('../components/DirectOrderForm'), { ssr: false });
-const SocialShareButtons = dynamic(() => import('../components/SocialShareButtons'), { ssr: false });
+const HelpSpreadTheWord = dynamic(() => import('../components/HelpSpreadTheWord'), { ssr: false });
 
 export default function Home() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -329,8 +330,8 @@ export default function Home() {
               </div>
               
               <div className="hidden md:flex space-x-8">
-                <a href="/" className="text-darkgrey hover:text-primary transition-colors font-medium">Home</a>
-                <a href="/use-cases" className="text-darkgrey hover:text-primary transition-colors font-medium">Use Cases</a>
+                <Link href="/" className="text-darkgrey hover:text-primary transition-colors font-medium">Home</Link>
+                <Link href="/use-cases" className="text-darkgrey hover:text-primary transition-colors font-medium">Use Cases</Link>
                 <a href="#features" className="text-darkgrey hover:text-primary transition-colors font-medium">Features</a>
                 <a href="#pricing" className="text-darkgrey hover:text-primary transition-colors font-medium">Pricing</a>
                 <a href="#contact" className="text-darkgrey hover:text-primary transition-colors font-medium">Contact</a>
@@ -362,8 +363,8 @@ export default function Home() {
             {mobileMenuOpen && (
               <div className="md:hidden pb-4 animate-slideUp">
                 <div className="flex flex-col space-y-3 bg-white rounded-lg p-4 shadow-lg border border-gray-100">
-                  <a href="/" onClick={() => setMobileMenuOpen(false)} className="text-darkgrey hover:text-primary transition-colors font-medium py-2 px-3 rounded-lg hover:bg-blue-50 active:bg-blue-100">Home</a>
-                  <a href="/use-cases" onClick={() => setMobileMenuOpen(false)} className="text-darkgrey hover:text-primary transition-colors font-medium py-2 px-3 rounded-lg hover:bg-blue-50 active:bg-blue-100">Use Cases</a>
+                  <Link href="/" onClick={() => setMobileMenuOpen(false)} className="text-darkgrey hover:text-primary transition-colors font-medium py-2 px-3 rounded-lg hover:bg-blue-50 active:bg-blue-100">Home</Link>
+                  <Link href="/use-cases" onClick={() => setMobileMenuOpen(false)} className="text-darkgrey hover:text-primary transition-colors font-medium py-2 px-3 rounded-lg hover:bg-blue-50 active:bg-blue-100">Use Cases</Link>
                   <a href="#features" onClick={() => setMobileMenuOpen(false)} className="text-darkgrey hover:text-primary transition-colors font-medium py-2 px-3 rounded-lg hover:bg-blue-50 active:bg-blue-100">Features</a>
                   <a href="#pricing" onClick={() => setMobileMenuOpen(false)} className="text-darkgrey hover:text-primary transition-colors font-medium py-2 px-3 rounded-lg hover:bg-blue-50 active:bg-blue-100">Pricing</a>
                   <a href="#contact" onClick={() => setMobileMenuOpen(false)} className="text-darkgrey hover:text-primary transition-colors font-medium py-2 px-3 rounded-lg hover:bg-blue-50 active:bg-blue-100">Contact</a>
@@ -564,7 +565,7 @@ export default function Home() {
                 </div>
                 <h3 className="text-2xl font-bold text-darkgrey mb-4">Fast, Personalized Setup</h3>
                 <p className="text-gray-600 leading-relaxed">
-                  Typically ready in 24-48 hours with personalized training. Our expert team handles the complete setup and ensures you're fully prepared to start.
+                  Typically ready in 24-48 hours with personalized training. Our expert team handles the complete setup and ensures you&apos;re fully prepared to start.
                 </p>
               </div>
 
@@ -588,7 +589,7 @@ export default function Home() {
                 </div>
                 <h3 className="text-2xl font-bold text-darkgrey mb-4">Human-in-the-Loop System</h3>
                 <p className="text-gray-600 leading-relaxed">
-                  We don't replace your team – we make them more efficient. Your HR retains full control while saving 15-20 hours monthly on repetitive screening tasks.
+                  We don&apos;t replace your team – we make them more efficient. Your HR retains full control while saving 15-20 hours monthly on repetitive screening tasks.
                 </p>
               </div>
             </div>
@@ -623,7 +624,7 @@ export default function Home() {
                   Your Domain, Connected
                 </h3>
                 <p className="text-gray-600 leading-relaxed text-center">
-                  We'll connect everything to your existing domain seamlessly. Professional setup ensures your brand stays front and center.
+                  We&apos;ll connect everything to your existing domain seamlessly. Professional setup ensures your brand stays front and center.
                 </p>
               </div>
 
@@ -633,7 +634,7 @@ export default function Home() {
                   Free Domain Included
                 </h3>
                 <p className="text-gray-600 leading-relaxed text-center">
-                  Don't have a domain? No worries! Get a free professional domain with your purchase. Your business deserves a strong online presence.
+                  Don&apos;t have a domain? No worries! Get a free professional domain with your purchase. Your business deserves a strong online presence.
                 </p>
               </div>
 
@@ -860,12 +861,10 @@ export default function Home() {
             <div className="mt-12 text-center">
               <DirectOrderForm />
             </div>
-
-            <div className="mt-12">
-              <SocialShareButtons />
-            </div>
           </div>
         </section>
+
+        <HelpSpreadTheWord />
 
         <section className="py-16 md:py-24 px-4 bg-gradient-to-br from-green-50 via-white to-blue-50">
           <div className="max-w-7xl mx-auto">
@@ -1220,7 +1219,7 @@ export default function Home() {
                 <ul className="space-y-3 text-gray-400">
                   <li><a href="#features" className="hover:text-white transition-colors">Features</a></li>
                   <li><a href="#pricing" className="hover:text-white transition-colors">Pricing</a></li>
-                  <li><a href="/use-cases" className="hover:text-white transition-colors">Use Cases</a></li>
+                  <li><Link href="/use-cases" className="hover:text-white transition-colors">Use Cases</Link></li>
                   <li><button onClick={() => setOpenAssessment(true)} className="hover:text-white transition-colors">Free Trial</button></li>
                 </ul>
               </div>
@@ -1238,9 +1237,9 @@ export default function Home() {
               <div>
                 <h4 className="text-lg font-bold mb-4 text-white">Legal & Support</h4>
                 <ul className="space-y-3 text-gray-400">
-                  <li><a href="/legal/privacy" className="hover:text-white transition-colors">Privacy Policy</a></li>
-                  <li><a href="/legal/terms" className="hover:text-white transition-colors">Terms of Service</a></li>
-                  <li><a href="/legal/refund" className="hover:text-white transition-colors">Refund Policy</a></li>
+                  <li><Link href="/legal/privacy" className="hover:text-white transition-colors">Privacy Policy</Link></li>
+                  <li><Link href="/legal/terms" className="hover:text-white transition-colors">Terms of Service</Link></li>
+                  <li><Link href="/legal/refund" className="hover:text-white transition-colors">Refund Policy</Link></li>
                   <li><a href="/legal/cookies" className="hover:text-white transition-colors">Cookie Policy</a></li>
                   <li><a href="mailto:sales@cehpoint.co.in" className="hover:text-white transition-colors">Contact Sales</a></li>
                 </ul>

@@ -1,3 +1,4 @@
+import Link from 'next/link';
 export default function IndustryGuarantees() {
   const guarantees = [
     {
@@ -171,7 +172,7 @@ export default function IndustryGuarantees() {
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="text-yellow-300">✓</span>
-                  <span>Client dashboards eliminate "Where's my candidate?" calls</span>
+                  <span>Client dashboards eliminate "Where&apos;s my candidate?" calls</span>
                 </li>
               </ul>
             </div>
@@ -258,12 +259,12 @@ export default function IndustryGuarantees() {
               </svg>
               Ask About Our Guarantees
             </a>
-            <a
+            <Link
               href="/legal/refund"
               className="inline-flex items-center justify-center gap-2 bg-white border-2 border-primary text-primary px-8 py-4 rounded-xl font-semibold text-lg hover:bg-lightgrey transition-all shadow-md"
             >
               Read Our Refund Policy
-            </a>
+            </Link>
           </div>
         </div>
       </div>

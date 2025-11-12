@@ -502,7 +502,7 @@ export default function ComprehensiveAssessment({ triggerOpen = false, onClose }
                           className={`w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent ${errors.monthlyHiring ? 'border-red-500' : 'border-gray-300'}`}
                         >
                           <option value="">Select range</option>
-                          <option value="0">We don't hire currently</option>
+                          <option value="0">We don&apos;t hire currently</option>
                           <option value="1-5">1-5 per month</option>
                           <option value="6-15">6-15 per month</option>
                           <option value="16-30">16-30 per month</option>
@@ -685,7 +685,7 @@ export default function ComprehensiveAssessment({ triggerOpen = false, onClose }
                           className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent"
                         >
                           <option value="">Select frequency</option>
-                          <option value="Never">Don't create quotations</option>
+                          <option value="Never">Don&apos;t create quotations</option>
                           <option value="1-5/month">1-5 per month</option>
                           <option value="6-15/month">6-15 per month</option>
                           <option value="15+/month">15+ per month</option>
@@ -1017,13 +1017,13 @@ export default function ComprehensiveAssessment({ triggerOpen = false, onClose }
 
                 <div className="bg-yellow-50 border-l-4 border-yellow-500 p-4 mb-6 text-left max-w-2xl mx-auto">
                   <p className="text-sm text-gray-700">
-                    <span className="font-semibold">📧 Check your email:</span> We've sent a confirmation to {formData.email} with next steps and your submission details. {formData.preferredContact === 'WhatsApp' && "Add our number to your contacts so you don't miss our WhatsApp message!"}
+                    <span className="font-semibold">📧 Check your email:</span> We&apos;ve sent a confirmation to {formData.email} with next steps and your submission details. {formData.preferredContact === 'WhatsApp' && "Add our number to your contacts so you don&apos;t miss our WhatsApp message!"}
                   </p>
                 </div>
 
                 <div className="bg-green-50 border-l-4 border-secondary p-4 mb-6 text-left max-w-2xl mx-auto">
                   <p className="text-sm text-gray-700">
-                    <span className="font-semibold text-secondary">💡 Meanwhile:</span> Feel free to explore our <a href="#features" className="text-primary underline">features</a>, check the <a href="#roi-calculator" className="text-primary underline">ROI calculator</a>, or review our <a href="#faq" className="text-primary underline">FAQs</a> to see how we'll solve your specific challenges.
+                    <span className="font-semibold text-secondary">💡 Meanwhile:</span> Feel free to explore our <a href="#features" className="text-primary underline">features</a>, check the <a href="#roi-calculator" className="text-primary underline">ROI calculator</a>, or review our <a href="#faq" className="text-primary underline">FAQs</a> to see how we&apos;ll solve your specific challenges.
                   </p>
                 </div>
 

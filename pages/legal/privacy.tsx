@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import LegalLayout from '../../components/legal/LegalLayout';
 
 export default function PrivacyPolicy() {
@@ -59,7 +60,7 @@ export default function PrivacyPolicy() {
             <li><strong>AI Processing:</strong> To generate assessment questions, analyze candidate responses, and create quotations</li>
             <li><strong>Communication:</strong> To send service updates, technical notices, and respond to your inquiries</li>
             <li><strong>Customization:</strong> To personalize your experience and provide industry-specific features</li>
-            <li><strong>Analytics:</strong> To analyze usage patterns and improve our platform's performance and features</li>
+            <li><strong>Analytics:</strong> To analyze usage patterns and improve our platform&apos;s performance and features</li>
             <li><strong>Security:</strong> To detect, prevent, and address technical issues and fraudulent activities</li>
             <li><strong>Compliance:</strong> To comply with legal obligations and enforce our terms of service</li>
           </ul>
@@ -134,7 +135,7 @@ export default function PrivacyPolicy() {
         <section>
           <h2 className="text-2xl font-bold text-darkgrey mb-4">8. Cookies and Tracking Technologies</h2>
           <p className="mb-4">
-            We use cookies and similar tracking technologies to enhance your experience on our platform. For detailed information about our use of cookies, please see our <a href="/legal/cookie-policy" className="text-primary hover:underline">Cookie Policy</a>.
+            We use cookies and similar tracking technologies to enhance your experience on our platform. For detailed information about our use of cookies, please see our <Link href="/legal/cookie-policy" className="text-primary hover:underline">Cookie Policy</Link>.
           </p>
         </section>
 
@@ -146,7 +147,7 @@ export default function PrivacyPolicy() {
         </section>
 
         <section>
-          <h2 className="text-2xl font-bold text-darkgrey mb-4">10. Children's Privacy</h2>
+          <h2 className="text-2xl font-bold text-darkgrey mb-4">10. Children&apos;s Privacy</h2>
           <p className="mb-4">
             Our services are not intended for individuals under the age of 18. We do not knowingly collect personal information from children. If you believe we have collected data from a minor, please contact us immediately so we can take appropriate action.
           </p>

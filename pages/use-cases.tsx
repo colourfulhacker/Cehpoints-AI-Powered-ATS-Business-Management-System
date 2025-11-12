@@ -267,8 +267,8 @@ export default function UseCases() {
                 <Link href="/use-cases">
                   <span className="text-primary font-semibold cursor-pointer">Use Cases</span>
                 </Link>
-                <a href="/#features" className="text-darkgrey hover:text-primary transition-colors font-medium">Features</a>
-                <a href="/#pricing" className="text-darkgrey hover:text-primary transition-colors font-medium">Pricing</a>
+                <Link href="/#features" className="text-darkgrey hover:text-primary transition-colors font-medium">Features</Link>
+                <Link href="/#pricing" className="text-darkgrey hover:text-primary transition-colors font-medium">Pricing</Link>
                 <a href="https://wa.me/919091156095" target="_blank" rel="noopener noreferrer" className="px-6 py-2 bg-secondary text-white rounded-lg hover:bg-green-700 transition-colors font-semibold">
                   Get Started
                 </a>
