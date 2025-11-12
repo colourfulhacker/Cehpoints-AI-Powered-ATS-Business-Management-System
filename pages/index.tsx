@@ -2,6 +2,10 @@ import Head from 'next/head';
 import { useState } from 'react';
 import dynamic from 'next/dynamic';
 import AnimatedText from '../components/AnimatedText';
+import AutomationJourney from '../components/AutomationJourney';
+import IndustryScenarioCarousel from '../components/IndustryScenarioCarousel';
+import IndustryGuarantees from '../components/IndustryGuarantees';
+import SocialShareButtons from '../components/SocialShareButtons';
 
 const CountdownTimer = dynamic(() => import('../components/CountdownTimer'), { ssr: false });
 const EnhancedROICalculator = dynamic(() => import('../components/EnhancedROICalculator'), { ssr: false });
@@ -9,6 +13,7 @@ const ComprehensiveAssessment = dynamic(() => import('../components/Comprehensiv
 
 export default function Home() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [openAssessment, setOpenAssessment] = useState(false);
 
   const features = [
     {
@@ -147,7 +152,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <ComprehensiveAssessment />
+      <ComprehensiveAssessment triggerOpen={openAssessment} onClose={() => setOpenAssessment(false)} />
 
       <div className="min-h-screen bg-white">
         <nav className="fixed top-0 w-full bg-white/95 backdrop-blur-sm shadow-sm z-40">
@@ -164,9 +169,9 @@ export default function Home() {
               </div>
 
               <div className="hidden md:block">
-                <a href="#contact" className="bg-primary text-white px-6 py-2.5 rounded-lg font-semibold hover:bg-blue-700 transition-colors shadow-md hover:shadow-lg">
+                <button onClick={() => setOpenAssessment(true)} className="bg-primary text-white px-6 py-2.5 rounded-lg font-semibold hover:bg-blue-700 transition-colors shadow-md hover:shadow-lg">
                   Get Started
-                </a>
+                </button>
               </div>
 
               <button
@@ -192,7 +197,7 @@ export default function Home() {
                   <a href="#features" onClick={() => setMobileMenuOpen(false)} className="text-darkgrey hover:text-primary transition-colors font-medium py-2 px-3 rounded-lg hover:bg-blue-50 active:bg-blue-100">Features</a>
                   <a href="#pricing" onClick={() => setMobileMenuOpen(false)} className="text-darkgrey hover:text-primary transition-colors font-medium py-2 px-3 rounded-lg hover:bg-blue-50 active:bg-blue-100">Pricing</a>
                   <a href="#contact" onClick={() => setMobileMenuOpen(false)} className="text-darkgrey hover:text-primary transition-colors font-medium py-2 px-3 rounded-lg hover:bg-blue-50 active:bg-blue-100">Contact</a>
-                  <a href="#contact" onClick={() => setMobileMenuOpen(false)} className="bg-primary text-white px-6 py-3 rounded-lg font-semibold text-center hover:bg-blue-700 active:bg-blue-800 shadow-md">Get Started</a>
+                  <button onClick={() => { setMobileMenuOpen(false); setOpenAssessment(true); }} className="bg-primary text-white px-6 py-3 rounded-lg font-semibold text-center hover:bg-blue-700 active:bg-blue-800 shadow-md">Get Started</button>
                 </div>
               </div>
             )}
@@ -344,14 +349,17 @@ export default function Home() {
           </div>
         </section>
 
+        <AutomationJourney />
+
+        <IndustryScenarioCarousel />
+
         <section className="py-16 md:py-24 px-4 bg-gradient-to-br from-primary to-blue-700">
           <div className="max-w-7xl mx-auto text-center text-white">
             <h2 className="text-3xl md:text-4xl font-bold mb-6">
-              Tired of Slow Hiring and Messy Project Handling?
+              Why Smart Businesses Choose Cehpoint
             </h2>
             <p className="text-xl md:text-2xl mb-12 max-w-4xl mx-auto leading-relaxed opacity-90">
-              Cehpoint's intelligent system eliminates manual work, prevents assessment cheating,
-              automates quotations, and gives your clients real-time project visibility.
+              Stop wasting time on repetitive tasks. Let your team focus on growth, strategy, and building relationships—not endless manual work.
             </p>
             <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 max-w-5xl mx-auto">
               {benefits.map((benefit, index) => (
@@ -364,120 +372,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="py-16 md:py-24 px-4 bg-gradient-to-b from-white to-lightgrey">
-          <div className="max-w-7xl mx-auto">
-            <div className="text-center mb-16">
-              <h2 className="text-3xl md:text-4xl font-bold text-darkgrey mb-4">
-                Real Scenarios: How Different Industries Save Time
-              </h2>
-              <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-                From IT companies to agencies, see how our human-in-the-loop system helps teams focus on what matters
-              </p>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all border-l-4 border-primary">
-                <div className="flex items-center gap-3 mb-4">
-                  <div className="text-4xl">💻</div>
-                  <h3 className="text-xl font-bold text-darkgrey">IT Services & Software Companies</h3>
-                </div>
-                <div className="space-y-3 text-gray-700">
-                  <p className="text-sm"><strong className="text-primary">Before:</strong> Senior developers spend 10-12 hours/month conducting technical rounds, taking time away from actual development.</p>
-                  <p className="text-sm"><strong className="text-secondary">After:</strong> AI handles initial technical screening. Developers only interview top 20% candidates, reclaiming 8+ hours monthly for feature building and code reviews.</p>
-                  <p className="text-xs text-gray-600 italic mt-4">💡 HR still makes final decisions. The system just filters out clearly unqualified candidates first.</p>
-                </div>
-              </div>
-
-              <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all border-l-4 border-secondary">
-                <div className="flex items-center gap-3 mb-4">
-                  <div className="text-4xl">🎨</div>
-                  <h3 className="text-xl font-bold text-darkgrey">Digital Marketing & Creative Agencies</h3>
-                </div>
-                <div className="space-y-3 text-gray-700">
-                  <p className="text-sm"><strong className="text-primary">Before:</strong> HR with limited marketing knowledge struggles to screen candidates for specialized roles (SEO, PPC, content).</p>
-                  <p className="text-sm"><strong className="text-secondary">After:</strong> Platform asks role-specific questions even if HR isn't an expert. AI detects copy-pasted responses. HR can conduct interviews confidently.</p>
-                  <p className="text-xs text-gray-600 italic mt-4">💡 Even on Google Meet, candidates might give scripted answers. Our AI flags suspicious patterns in responses.</p>
-                </div>
-              </div>
-
-              <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all border-l-4 border-accent">
-                <div className="flex items-center gap-3 mb-4">
-                  <div className="text-4xl">👔</div>
-                  <h3 className="text-xl font-bold text-darkgrey">Staffing & Recruitment Firms</h3>
-                </div>
-                <div className="space-y-3 text-gray-700">
-                  <p className="text-sm"><strong className="text-primary">Before:</strong> Recruiters manually screen 100+ resumes daily, spending 20+ hours weekly on initial filtering.</p>
-                  <p className="text-sm"><strong className="text-secondary">After:</strong> AI pre-screens candidates 24/7. Recruiters focus on relationship building with top candidates and client servicing.</p>
-                  <p className="text-xs text-gray-600 italic mt-4">💡 System complements your expertise – doesn't replace your judgment in selecting the right fit for clients.</p>
-                </div>
-              </div>
-
-              <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all border-l-4 border-purple-500">
-                <div className="flex items-center gap-3 mb-4">
-                  <div className="text-4xl">📊</div>
-                  <h3 className="text-xl font-bold text-darkgrey">Consulting & Professional Services</h3>
-                </div>
-                <div className="space-y-3 text-gray-700">
-                  <p className="text-sm"><strong className="text-primary">Before:</strong> Partners waste billable hours on initial candidate screening instead of client work.</p>
-                  <p className="text-sm"><strong className="text-secondary">After:</strong> Automated screening frees partners to focus on client deliverables. Only meet pre-qualified candidates who match firm culture.</p>
-                  <p className="text-xs text-gray-600 italic mt-4">💡 Your team remains in control of final hiring – system just saves time on obvious mismatches.</p>
-                </div>
-              </div>
-
-              <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all border-l-4 border-orange-500">
-                <div className="flex items-center gap-3 mb-4">
-                  <div className="text-4xl">🏭</div>
-                  <h3 className="text-xl font-bold text-darkgrey">Manufacturing & Production</h3>
-                </div>
-                <div className="space-y-3 text-gray-700">
-                  <p className="text-sm"><strong className="text-primary">Before:</strong> Hiring supervisors and quality managers for shifts requires extensive technical screening by operations team.</p>
-                  <p className="text-sm"><strong className="text-secondary">After:</strong> Platform assesses technical knowledge and safety awareness. Operations team interviews only qualified candidates.</p>
-                  <p className="text-xs text-gray-600 italic mt-4">💡 Need custom questions for your industry? We can configure them in 72 hours.</p>
-                </div>
-              </div>
-
-              <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all border-l-4 border-pink-500">
-                <div className="flex items-center gap-3 mb-4">
-                  <div className="text-4xl">🛍️</div>
-                  <h3 className="text-xl font-bold text-darkgrey">Retail & E-commerce</h3>
-                </div>
-                <div className="space-y-3 text-gray-700">
-                  <p className="text-sm"><strong className="text-primary">Before:</strong> High-volume hiring for stores and warehouses overwhelms small HR teams with hundreds of applications.</p>
-                  <p className="text-sm"><strong className="text-secondary">After:</strong> Bulk screening handles volume. HR focuses on culture fit interviews and onboarding excellent candidates.</p>
-                  <p className="text-xs text-gray-600 italic mt-4">💡 Scales with your hiring spikes during festival seasons – no extra monthly costs.</p>
-                </div>
-              </div>
-            </div>
-
-            <div className="mt-12 text-center bg-blue-50 border-2 border-primary rounded-2xl p-8 max-w-4xl mx-auto">
-              <h3 className="text-2xl font-bold text-darkgrey mb-4">💡 The Bottom Line</h3>
-              <p className="text-gray-700 leading-relaxed text-lg mb-4">
-                We're honest: no system is perfect. Determined candidates can attempt workarounds. But here's what's real:
-              </p>
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-left">
-                <div className="flex items-start gap-2">
-                  <span className="text-secondary text-xl">✓</span>
-                  <p className="text-gray-700"><strong>15-20 hours saved</strong> monthly for HR teams</p>
-                </div>
-                <div className="flex items-start gap-2">
-                  <span className="text-secondary text-xl">✓</span>
-                  <p className="text-gray-700"><strong>8-12 hours reclaimed</strong> by senior developers</p>
-                </div>
-                <div className="flex items-start gap-2">
-                  <span className="text-secondary text-xl">✓</span>
-                  <p className="text-gray-700"><strong>HR stays in control</strong> – makes all final decisions</p>
-                </div>
-                <div className="flex items-start gap-2">
-                  <span className="text-secondary text-xl">✓</span>
-                  <p className="text-gray-700"><strong>AI flags suspicious</strong> copy-paste patterns</p>
-                </div>
-              </div>
-              <p className="text-gray-600 text-sm mt-6 italic">
-                Your team focuses on strategic work. The system handles repetitive screening. You maintain complete hiring authority.
-              </p>
-            </div>
-          </div>
-        </section>
+        <IndustryGuarantees />
 
         <section className="py-16 md:py-24 px-4 bg-white">
           <div className="max-w-7xl mx-auto">

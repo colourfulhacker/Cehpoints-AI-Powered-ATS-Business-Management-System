@@ -69,30 +69,27 @@ const initialFormData: FormData = {
   specificRequirements: ''
 };
 
-export default function ComprehensiveAssessment() {
-  const [isVisible, setIsVisible] = useState(false);
+interface ComprehensiveAssessmentProps {
+  triggerOpen?: boolean;
+  onClose?: () => void;
+}
+
+export default function ComprehensiveAssessment({ triggerOpen = false, onClose }: ComprehensiveAssessmentProps = {}) {
+  const [isVisible, setIsVisible] = useState(true); // Always show floating button
   const [isOpen, setIsOpen] = useState(false);
   const [currentStep, setCurrentStep] = useState(0); // 0 = intro, 1 = form, 2 = thank you
   const [currentFormSection, setCurrentFormSection] = useState(0); // Track which section of form
   const [formData, setFormData] = useState<FormData>(initialFormData);
   const [errors, setErrors] = useState<Partial<Record<keyof FormData, string>>>({});
 
+  // Handle external trigger (from buttons)
   useEffect(() => {
-    // Check if user has seen the assessment before
-    const hasSeenAssessment = localStorage.getItem('cehpoint_assessment_seen');
-    
-    if (!hasSeenAssessment) {
-      const timer = setTimeout(() => {
-        setIsVisible(true);
-        setIsOpen(true);
-      }, 10000); // Show after 10 seconds
-
-      return () => clearTimeout(timer);
-    } else {
-      // Still show the floating button
-      setIsVisible(true);
+    if (triggerOpen) {
+      setIsOpen(true);
+      setCurrentStep(0);
+      setCurrentFormSection(0);
     }
-  }, []);
+  }, [triggerOpen]);
 
   const handleSkip = () => {
     if (currentStep === 1 && currentFormSection > 0) {
@@ -105,6 +102,7 @@ export default function ComprehensiveAssessment() {
     setIsOpen(false);
     setCurrentStep(0);
     setCurrentFormSection(0);
+    if (onClose) onClose();
   };
 
   const handleReopen = () => {
