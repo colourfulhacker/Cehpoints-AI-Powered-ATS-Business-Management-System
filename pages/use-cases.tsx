@@ -255,19 +255,34 @@ export default function UseCases() {
 
       <div className="min-h-screen bg-gradient-to-b from-lightgrey to-white">
         <nav className="bg-white shadow-md sticky top-0 z-50">
-          <div className="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
-            <Link href="/">
-              <span className="text-2xl font-bold text-primary cursor-pointer">Cehpoint</span>
-            </Link>
-            <div className="flex gap-4">
+          <div className="max-w-7xl mx-auto px-4 py-4">
+            <div className="flex justify-between items-center">
               <Link href="/">
-                <button className="px-6 py-2 border-2 border-primary text-primary rounded-lg hover:bg-primary hover:text-white transition-colors font-semibold">
-                  Back to Home
-                </button>
+                <span className="text-2xl font-bold text-primary cursor-pointer">Cehpoint</span>
               </Link>
-              <a href="https://wa.me/919091156095" target="_blank" rel="noopener noreferrer" className="px-6 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors font-semibold">
-                Get Started
-              </a>
+              <div className="hidden md:flex items-center gap-6">
+                <Link href="/">
+                  <span className="text-darkgrey hover:text-primary transition-colors font-medium cursor-pointer">Home</span>
+                </Link>
+                <Link href="/use-cases">
+                  <span className="text-primary font-semibold cursor-pointer">Use Cases</span>
+                </Link>
+                <a href="/#features" className="text-darkgrey hover:text-primary transition-colors font-medium">Features</a>
+                <a href="/#pricing" className="text-darkgrey hover:text-primary transition-colors font-medium">Pricing</a>
+                <a href="https://wa.me/919091156095" target="_blank" rel="noopener noreferrer" className="px-6 py-2 bg-secondary text-white rounded-lg hover:bg-green-700 transition-colors font-semibold">
+                  Get Started
+                </a>
+              </div>
+              <div className="md:hidden flex gap-3">
+                <Link href="/">
+                  <button className="px-4 py-2 border-2 border-primary text-primary rounded-lg hover:bg-primary hover:text-white transition-colors font-semibold text-sm">
+                    Home
+                  </button>
+                </Link>
+                <a href="https://wa.me/919091156095" target="_blank" rel="noopener noreferrer" className="px-4 py-2 bg-secondary text-white rounded-lg hover:bg-green-700 transition-colors font-semibold text-sm">
+                  Start
+                </a>
+              </div>
             </div>
           </div>
         </nav>

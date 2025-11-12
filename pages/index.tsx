@@ -326,6 +326,8 @@ export default function Home() {
               </div>
               
               <div className="hidden md:flex space-x-8">
+                <a href="/" className="text-darkgrey hover:text-primary transition-colors font-medium">Home</a>
+                <a href="/use-cases" className="text-darkgrey hover:text-primary transition-colors font-medium">Use Cases</a>
                 <a href="#features" className="text-darkgrey hover:text-primary transition-colors font-medium">Features</a>
                 <a href="#pricing" className="text-darkgrey hover:text-primary transition-colors font-medium">Pricing</a>
                 <a href="#contact" className="text-darkgrey hover:text-primary transition-colors font-medium">Contact</a>
@@ -357,6 +359,8 @@ export default function Home() {
             {mobileMenuOpen && (
               <div className="md:hidden pb-4 animate-slideUp">
                 <div className="flex flex-col space-y-3 bg-white rounded-lg p-4 shadow-lg border border-gray-100">
+                  <a href="/" onClick={() => setMobileMenuOpen(false)} className="text-darkgrey hover:text-primary transition-colors font-medium py-2 px-3 rounded-lg hover:bg-blue-50 active:bg-blue-100">Home</a>
+                  <a href="/use-cases" onClick={() => setMobileMenuOpen(false)} className="text-darkgrey hover:text-primary transition-colors font-medium py-2 px-3 rounded-lg hover:bg-blue-50 active:bg-blue-100">Use Cases</a>
                   <a href="#features" onClick={() => setMobileMenuOpen(false)} className="text-darkgrey hover:text-primary transition-colors font-medium py-2 px-3 rounded-lg hover:bg-blue-50 active:bg-blue-100">Features</a>
                   <a href="#pricing" onClick={() => setMobileMenuOpen(false)} className="text-darkgrey hover:text-primary transition-colors font-medium py-2 px-3 rounded-lg hover:bg-blue-50 active:bg-blue-100">Pricing</a>
                   <a href="#contact" onClick={() => setMobileMenuOpen(false)} className="text-darkgrey hover:text-primary transition-colors font-medium py-2 px-3 rounded-lg hover:bg-blue-50 active:bg-blue-100">Contact</a>
