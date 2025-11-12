@@ -209,7 +209,7 @@ export default function UseCases() {
     <>
       <Head>
         <title>Cehpoint Use Cases India - Solo Entrepreneur, IT Companies, Agencies | Real Success Stories</title>
-        <meta name="description" content="Discover how 450+ Indian businesses use Cehpoint: Solo entrepreneurs running complete operations, IT companies automating hiring, agencies saving 20+ hours weekly, recruitment firms 3X-ing placements. Real results from Mumbai, Delhi, Bangalore startups. ₹15,000 one-time investment transforming businesses across India." />
+        <meta name="description" content="Discover how 380+ Indian businesses use Cehpoint: Solo entrepreneurs running complete operations, IT companies automating hiring, agencies saving 20+ hours weekly, recruitment firms growing placements. Real results from Mumbai, Delhi, Bangalore startups. ₹15,000 one-time investment transforming businesses across India." />
         <meta name="keywords" content="solo entrepreneur India case study, IT hiring automation success, agency management tools India, recruitment automation results, startup ATS success stories, business management case studies India, one-person business tools, freelancer management India, digital agency automation, IT company recruitment success, staffing firm automation, Bangalore startup tools, Mumbai entrepreneur software, Delhi business automation" />
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
         <meta name="robots" content="index, follow" />
@@ -219,7 +219,7 @@ export default function UseCases() {
         <meta property="og:type" content="article" />
         <meta property="og:url" content="https://offer.cehpoint.co.in/use-cases" />
         <meta property="og:title" content="Real Success Stories - How Indian Businesses Use Cehpoint ATS" />
-        <meta property="og:description" content="From solo entrepreneurs to IT companies - see how Cehpoint transformed 450+ Indian businesses. Real results, real time savings, real growth." />
+        <meta property="og:description" content="From solo entrepreneurs to IT companies - see how Cehpoint transformed 380+ Indian businesses. Real results, real time savings, real growth." />
         <meta property="og:image" content="https://offer.cehpoint.co.in/og-usecase.jpg" />
         <meta property="og:locale" content="en_IN" />
         
