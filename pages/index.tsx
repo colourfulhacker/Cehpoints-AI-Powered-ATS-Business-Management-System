@@ -1,10 +1,12 @@
 import Head from 'next/head';
 import { useState } from 'react';
 import dynamic from 'next/dynamic';
+import AnimatedText from '../components/AnimatedText';
 
 const QuizModal = dynamic(() => import('../components/QuizModal'), { ssr: false });
 const CountdownTimer = dynamic(() => import('../components/CountdownTimer'), { ssr: false });
-const ROICalculator = dynamic(() => import('../components/ROICalculator'), { ssr: false });
+const EnhancedROICalculator = dynamic(() => import('../components/EnhancedROICalculator'), { ssr: false });
+const BusinessAssessment = dynamic(() => import('../components/BusinessAssessment'), { ssr: false });
 
 export default function Home() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -139,6 +141,7 @@ export default function Home() {
       </Head>
 
       <QuizModal />
+      <BusinessAssessment />
 
       <div className="min-h-screen bg-white">
         <nav className="fixed top-0 w-full bg-white/95 backdrop-blur-sm shadow-sm z-40">
@@ -200,14 +203,26 @@ export default function Home() {
               </div>
               
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-darkgrey mb-6 leading-tight">
-                Revolutionize Your Hiring &<br />
-                <span className="text-gradient">
-                  Project Management
-                </span>
+                Revolutionize Your{' '}
+                <AnimatedText 
+                  texts={[
+                    'Intern Hiring',
+                    'Marketing Hiring',
+                    'Project Management',
+                    'Quotation Management',
+                    'Client Management',
+                    'Task Management',
+                    'Real-time Reporting',
+                    'Developer Management'
+                  ]}
+                  className="text-gradient"
+                />
               </h1>
               
-              <div className="inline-block bg-yellow-100 border-2 border-yellow-400 px-4 md:px-6 py-2 rounded-full mb-4">
-                <span className="text-accent font-bold text-xs md:text-sm">⚡ LIMITED TIME: Save ₹35,000 • Only 47 Spots Left!</span>
+              <div className="inline-block bg-gradient-to-r from-yellow-100 to-orange-100 border-2 border-yellow-400 px-4 md:px-6 py-3 rounded-full mb-4 shadow-lg hover:shadow-xl transition-all">
+                <span className="text-accent font-bold text-xs md:text-sm">
+                  🚀 FOUNDER LAUNCH BONUS: Save ₹35,000 This Month • 24h Setup Guarantee!
+                </span>
               </div>
               
               <p className="text-xl md:text-2xl text-gray-600 mb-8 leading-relaxed">
@@ -394,6 +409,94 @@ export default function Home() {
           </div>
         </section>
 
+        <section className="py-16 md:py-24 px-4 bg-gradient-to-br from-blue-50 via-white to-green-50">
+          <div className="max-w-7xl mx-auto">
+            <div className="text-center mb-16">
+              <h2 className="text-3xl md:text-4xl font-bold text-darkgrey mb-4">
+                🤝 Complete Transparency & Ownership
+              </h2>
+              <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+                We believe in true ownership. When you invest with us, you get more than just software – you get a complete business solution with full transparency.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all border-t-4 border-primary transform hover:-translate-y-2">
+                <div className="text-5xl mb-6 text-center">💻</div>
+                <h3 className="text-xl font-bold text-darkgrey mb-4 text-center">
+                  Source Code Access
+                </h3>
+                <p className="text-gray-600 leading-relaxed text-center">
+                  Need customizations? Request the source code to make changes with your own development team or get our expert help for modifications tailored to your needs.
+                </p>
+              </div>
+
+              <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all border-t-4 border-secondary transform hover:-translate-y-2">
+                <div className="text-5xl mb-6 text-center">🌐</div>
+                <h3 className="text-xl font-bold text-darkgrey mb-4 text-center">
+                  Your Domain, Connected
+                </h3>
+                <p className="text-gray-600 leading-relaxed text-center">
+                  We'll connect everything to your existing domain seamlessly. Professional setup ensures your brand stays front and center.
+                </p>
+              </div>
+
+              <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all border-t-4 border-accent transform hover:-translate-y-2">
+                <div className="text-5xl mb-6 text-center">🎁</div>
+                <h3 className="text-xl font-bold text-darkgrey mb-4 text-center">
+                  Free Domain Included
+                </h3>
+                <p className="text-gray-600 leading-relaxed text-center">
+                  Don't have a domain? No worries! Get a free professional domain with your purchase. Your business deserves a strong online presence.
+                </p>
+              </div>
+
+              <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all border-t-4 border-purple-500 transform hover:-translate-y-2">
+                <div className="text-5xl mb-6 text-center">🚀</div>
+                <h3 className="text-xl font-bold text-darkgrey mb-4 text-center">
+                  Free Website for Startups
+                </h3>
+                <p className="text-gray-600 leading-relaxed text-center">
+                  Eligible new entrepreneurs and startups get complimentary business website development along with this product.{' '}
+                  <span className="text-sm text-gray-500 italic">Terms & conditions apply.</span>
+                </p>
+              </div>
+
+              <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all border-t-4 border-green-500 transform hover:-translate-y-2">
+                <div className="text-5xl mb-6 text-center">📄</div>
+                <h3 className="text-xl font-bold text-darkgrey mb-4 text-center">
+                  GST Invoice Provided
+                </h3>
+                <p className="text-gray-600 leading-relaxed text-center">
+                  Run a legitimate business with proper documentation. Get official GST bills for all your purchases for accounting and tax purposes.
+                </p>
+              </div>
+
+              <div className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all border-t-4 border-blue-500 transform hover:-translate-y-2">
+                <div className="text-5xl mb-6 text-center">⚡</div>
+                <h3 className="text-xl font-bold text-darkgrey mb-4 text-center">
+                  72-Hour Customization
+                </h3>
+                <p className="text-gray-600 leading-relaxed text-center">
+                  Need industry-specific features? We can deliver a customized version tailored to your unique business requirements in just 72 hours!
+                </p>
+              </div>
+            </div>
+
+            <div className="mt-12 text-center bg-gradient-to-r from-primary to-secondary text-white p-8 rounded-2xl shadow-xl">
+              <h3 className="text-2xl md:text-3xl font-bold mb-4">
+                🛡️ Your Success, Our Commitment
+              </h3>
+              <p className="text-lg md:text-xl leading-relaxed opacity-95 max-w-4xl mx-auto">
+                We're not just selling software – we're building long-term partnerships. From source code access to GST invoices, free domains to startup support, we've got everything covered for your business growth.
+              </p>
+              <a href="#contact" className="inline-block mt-6 bg-white text-primary px-8 py-4 rounded-xl font-bold text-lg hover:bg-gray-100 transition-all shadow-lg transform hover:scale-105">
+                Partner With Us Today
+              </a>
+            </div>
+          </div>
+        </section>
+
         <section className="py-16 md:py-24 px-4 bg-gradient-to-b from-white to-lightgrey">
           <div className="max-w-4xl mx-auto">
             <div className="text-center mb-12">
@@ -404,7 +507,7 @@ export default function Home() {
                 Use our interactive calculator to discover your exact ROI
               </p>
             </div>
-            <ROICalculator />
+            <EnhancedROICalculator />
           </div>
         </section>
 
