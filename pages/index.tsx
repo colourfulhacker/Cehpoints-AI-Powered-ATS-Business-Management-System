@@ -162,21 +162,28 @@ export default function Home() {
 
               <button
                 onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-                className="md:hidden text-darkgrey"
+                className="md:hidden text-darkgrey p-2 hover:bg-gray-100 active:bg-gray-200 rounded-lg transition-colors"
+                aria-label="Toggle menu"
               >
-                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-                </svg>
+                {mobileMenuOpen ? (
+                  <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                  </svg>
+                ) : (
+                  <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+                  </svg>
+                )}
               </button>
             </div>
 
             {mobileMenuOpen && (
-              <div className="md:hidden pb-4">
-                <div className="flex flex-col space-y-3">
-                  <a href="#features" onClick={() => setMobileMenuOpen(false)} className="text-darkgrey hover:text-primary transition-colors font-medium">Features</a>
-                  <a href="#pricing" onClick={() => setMobileMenuOpen(false)} className="text-darkgrey hover:text-primary transition-colors font-medium">Pricing</a>
-                  <a href="#contact" onClick={() => setMobileMenuOpen(false)} className="text-darkgrey hover:text-primary transition-colors font-medium">Contact</a>
-                  <a href="#contact" onClick={() => setMobileMenuOpen(false)} className="bg-primary text-white px-6 py-2.5 rounded-lg font-semibold text-center">Get Started</a>
+              <div className="md:hidden pb-4 animate-slideUp">
+                <div className="flex flex-col space-y-3 bg-white rounded-lg p-4 shadow-lg border border-gray-100">
+                  <a href="#features" onClick={() => setMobileMenuOpen(false)} className="text-darkgrey hover:text-primary transition-colors font-medium py-2 px-3 rounded-lg hover:bg-blue-50 active:bg-blue-100">Features</a>
+                  <a href="#pricing" onClick={() => setMobileMenuOpen(false)} className="text-darkgrey hover:text-primary transition-colors font-medium py-2 px-3 rounded-lg hover:bg-blue-50 active:bg-blue-100">Pricing</a>
+                  <a href="#contact" onClick={() => setMobileMenuOpen(false)} className="text-darkgrey hover:text-primary transition-colors font-medium py-2 px-3 rounded-lg hover:bg-blue-50 active:bg-blue-100">Contact</a>
+                  <a href="#contact" onClick={() => setMobileMenuOpen(false)} className="bg-primary text-white px-6 py-3 rounded-lg font-semibold text-center hover:bg-blue-700 active:bg-blue-800 shadow-md">Get Started</a>
                 </div>
               </div>
             )}
@@ -199,8 +206,8 @@ export default function Home() {
                 </span>
               </h1>
               
-              <div className="inline-block bg-yellow-100 border-2 border-yellow-400 px-6 py-2 rounded-full mb-4">
-                <span className="text-accent font-bold text-sm">⚡ LIMITED TIME: Save ₹35,000 • Only 47 Spots Left!</span>
+              <div className="inline-block bg-yellow-100 border-2 border-yellow-400 px-4 md:px-6 py-2 rounded-full mb-4">
+                <span className="text-accent font-bold text-xs md:text-sm">⚡ LIMITED TIME: Save ₹35,000 • Only 47 Spots Left!</span>
               </div>
               
               <p className="text-xl md:text-2xl text-gray-600 mb-8 leading-relaxed">
@@ -208,27 +215,27 @@ export default function Home() {
                 Manage recruitment to project delivery in one intelligent platform.
               </p>
 
-              <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
-                <a href="#contact" className="group bg-secondary text-white px-8 py-4 rounded-xl font-semibold text-lg hover:bg-green-700 transition-all shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 flex items-center justify-center gap-2">
+              <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center mb-8">
+                <a href="#contact" className="group bg-secondary text-white px-6 sm:px-8 py-3.5 sm:py-4 rounded-xl font-semibold text-base sm:text-lg hover:bg-green-700 active:bg-green-800 transition-all shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 active:scale-95 flex items-center justify-center gap-2 touch-manipulation">
                   Start Free Trial
                   <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
                   </svg>
                 </a>
-                <a href="#features" className="bg-white text-primary border-2 border-primary px-8 py-4 rounded-xl font-semibold text-lg hover:bg-lightgrey transition-all shadow-md hover:shadow-lg">
+                <a href="#features" className="bg-white text-primary border-2 border-primary px-6 sm:px-8 py-3.5 sm:py-4 rounded-xl font-semibold text-base sm:text-lg hover:bg-lightgrey active:bg-blue-50 transition-all shadow-md hover:shadow-lg active:scale-95 touch-manipulation">
                   Explore Features
                 </a>
               </div>
               
-              <div className="flex items-center justify-center gap-6 text-sm text-gray-600 mb-12">
+              <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-6 text-xs sm:text-sm text-gray-600 mb-12">
                 <div className="flex items-center gap-2">
-                  <svg className="w-5 h-5 text-secondary" fill="currentColor" viewBox="0 0 20 20">
+                  <svg className="w-4 h-4 sm:w-5 sm:h-5 text-secondary" fill="currentColor" viewBox="0 0 20 20">
                     <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                   </svg>
                   <span>No credit card required</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <svg className="w-5 h-5 text-secondary" fill="currentColor" viewBox="0 0 20 20">
+                  <svg className="w-4 h-4 sm:w-5 sm:h-5 text-secondary" fill="currentColor" viewBox="0 0 20 20">
                     <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                   </svg>
                   <span>Setup in 24 hours</span>
